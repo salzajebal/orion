@@ -19,14 +19,8 @@ export function Navbar() {
 
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="text-gray-600">
-            <Globe className="w-5 h-5" />
-          </Button>
-          <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-bold px-6">
-            로그인
-          </Button>
           <Button 
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-6"
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-10 py-6 text-lg"
             onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
           >
             가입하기
@@ -43,9 +37,8 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-t p-4 flex flex-col gap-4 shadow-lg absolute w-full">
           <div className="flex flex-col gap-3">
-            <Button variant="outline" className="w-full rounded-full border-primary text-primary">로그인</Button>
             <Button 
-              className="w-full rounded-full bg-secondary text-secondary-foreground font-bold"
+              className="w-full rounded-full bg-secondary text-secondary-foreground font-bold py-4 text-lg"
               onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
             >
               가입하기
