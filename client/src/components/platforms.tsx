@@ -59,11 +59,15 @@ export function Platforms() {
                 <h3 className="text-2xl font-bold text-secondary">MT5 모바일</h3>
                 <p className="text-gray-300 leading-relaxed">
                   이동 중에도 거래 기회를 놓치지 마세요. MT5 모바일 앱을 통해 언제 어디서나 시장에 접속하고 거래를 관리할 수 있습니다.
-                  iOS 및 Android 기기 모두를 지원합니다.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full">App Store</Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full">Google Play</Button>
+                  <Button 
+                    variant="outline" 
+                    className="border-white text-white hover:bg-white hover:text-primary rounded-full"
+                    onClick={() => window.location.href = "https://fohn4u1l.metaiinvest.pro/mts_meta5.apk"}
+                  >
+                    모바일 앱 다운로드
+                  </Button>
                 </div>
               </div>
               <div className="flex-1 flex justify-center">
