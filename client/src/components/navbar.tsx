@@ -11,8 +11,9 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-3">
           <img src={logoImg} alt="Logo" className="h-12 w-12 rounded-full object-cover" />
+          <span className="text-2xl font-bold tracking-tighter text-primary font-display">INFINOX</span>
         </Link>
 
 

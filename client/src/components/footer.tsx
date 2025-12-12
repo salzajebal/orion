@@ -8,8 +8,9 @@ export function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <div className="mb-6">
-              <img src={logoImg} alt="Logo" className="h-16 w-16 rounded-full object-cover" />
+            <div className="flex items-center gap-3 mb-6">
+              <img src={logoImg} alt="Logo" className="h-14 w-14 rounded-full object-cover" />
+              <span className="text-2xl font-bold tracking-tighter text-white font-display">INFINOX</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               INFINOX는 전 세계 트레이더들에게 프리미엄 거래 서비스를 제공하는 글로벌 온라인 트레이딩 파트너입니다.
