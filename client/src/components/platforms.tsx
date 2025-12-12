@@ -18,14 +18,14 @@ export function Platforms() {
 
         <Tabs defaultValue="desktop" className="w-full max-w-5xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 bg-white/10 p-1 rounded-full mb-12">
-            <TabsTrigger value="desktop" className="rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold">
-              <Monitor className="w-4 h-4 mr-2" /> 데스크탑
+            <TabsTrigger value="desktop" className="flex-1 rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold justify-center">
+              <Monitor className="w-4 h-4 mr-2 shrink-0" /> 데스크탑
             </TabsTrigger>
-            <TabsTrigger value="mobile" className="rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold">
-              <Smartphone className="w-4 h-4 mr-2" /> 모바일
+            <TabsTrigger value="mobile" className="flex-1 rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold justify-center">
+              <Smartphone className="w-4 h-4 mr-2 shrink-0" /> 모바일
             </TabsTrigger>
-            <TabsTrigger value="web" className="rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold">
-              <Globe className="w-4 h-4 mr-2" /> 웹트레이더
+            <TabsTrigger value="web" className="flex-1 rounded-full data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground py-3 font-bold justify-center">
+              <Globe className="w-4 h-4 mr-2 shrink-0" /> 웹트레이더
             </TabsTrigger>
           </TabsList>
 
