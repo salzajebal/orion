@@ -25,6 +25,19 @@ export function Hero() {
             <p className="text-gray-400 mt-6 max-w-lg text-lg">
               고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 MT5를 Infinox에서 경험하세요.
             </p>
+
+            <div className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 relative overflow-hidden max-w-md">
+              <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
+                EVENT
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                26년도 Metatrader5 에서 <span className="text-secondary">최대 10% 제공</span>
+              </h3>
+              <div className="space-y-1 text-sm text-gray-300">
+                <p>기간: 2025.12.01 ~ 혜택 소진시</p>
+                <p>대상: 신규 코드 가입고객</p>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div 
