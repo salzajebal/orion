@@ -33,7 +33,10 @@ export function Navbar() {
           <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-bold px-6">
             로그인
           </Button>
-          <Button className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-6">
+          <Button 
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-6"
+            onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
+          >
             가입하기
           </Button>
         </div>
@@ -52,7 +55,12 @@ export function Navbar() {
           <Link href="#" className="text-lg font-semibold py-2">파트너</Link>
           <div className="flex flex-col gap-3 mt-4">
             <Button variant="outline" className="w-full rounded-full border-primary text-primary">로그인</Button>
-            <Button className="w-full rounded-full bg-secondary text-secondary-foreground font-bold">가입하기</Button>
+            <Button 
+              className="w-full rounded-full bg-secondary text-secondary-foreground font-bold"
+              onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
+            >
+              가입하기
+            </Button>
           </div>
         </div>
       )}
