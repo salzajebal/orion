@@ -20,7 +20,7 @@ export function Navbar() {
         {/* Right Actions */}
         <div className="hidden md:flex items-center gap-4">
           <Button 
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-10 py-6 text-lg"
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold px-10 py-3 text-lg"
             onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
           >
             가입하기
