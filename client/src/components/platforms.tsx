@@ -39,7 +39,6 @@ export function Platforms() {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full">Windows 다운로드</Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full">Mac 다운로드</Button>
                 </div>
               </div>
               <div className="flex-1">
