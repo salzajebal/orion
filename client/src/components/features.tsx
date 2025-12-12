@@ -28,25 +28,25 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-gray-50">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+    <section id="features" className="py-12 md:py-20 bg-gray-50">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">
             MT5에서 <span className="text-secondary-foreground border-b-4 border-secondary">거래하세요</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
             고급 MT5 플랫폼에서 거래합니다. 알고리즘 거래, 기술 및 기본 분석 도구, 광범위한 가격 분석 기능, 거래 신호 등에 액세스할 수 있습니다.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-gray-100">
-              <div className="w-20 h-20 mb-6 bg-gray-50 rounded-full flex items-center justify-center p-4">
+            <div key={index} className="bg-white p-4 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-gray-100">
+              <div className="w-14 h-14 md:w-20 md:h-20 mb-4 md:mb-6 bg-gray-50 rounded-full flex items-center justify-center p-3 md:p-4">
                 <img src={feature.icon} alt={feature.title} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+              <h3 className="text-base md:text-xl font-bold text-primary mb-2 md:mb-3">{feature.title}</h3>
+              <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
