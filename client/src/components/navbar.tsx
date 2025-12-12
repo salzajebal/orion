@@ -13,7 +13,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <img src={logoImg} alt="Logo" className="h-12 w-12 rounded-full object-cover" />
-          <span className="text-2xl font-bold tracking-tighter text-primary font-display">INFINOX</span>
+          <span className="text-2xl font-bold tracking-tighter text-primary font-display">MT5</span>
         </Link>
 
 

@@ -23,7 +23,7 @@ export function Hero() {
               MetaTrader 경험 업그레이드
             </h2>
             <p className="text-gray-400 mt-6 max-w-lg text-lg">
-              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 MT5를 Infinox에서 경험하세요.
+              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 MT5를 경험하세요.
             </p>
 
             <motion.div 

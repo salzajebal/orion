@@ -27,7 +27,7 @@ export function Steps() {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            3가지 간단한 과정과 <span className="text-secondary-foreground border-b-4 border-secondary">INFINOX에서</span> 거래 즐기기
+            3가지 간단한 과정과 <span className="text-secondary-foreground border-b-4 border-secondary">MT5에서</span> 거래 즐기기
           </h2>
         </div>
 

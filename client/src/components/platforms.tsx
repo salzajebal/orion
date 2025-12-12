@@ -13,7 +13,7 @@ export function Platforms() {
           MT5 데스크탑, 모바일, 웹
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-12">
-          어디서나 Infinox와 함께 거래하세요. 모든 기기에서 완벽한 거래 환경을 제공합니다.
+          어디서나 MT5와 함께 거래하세요. 모든 기기에서 완벽한 거래 환경을 제공합니다.
         </p>
 
         <Tabs defaultValue="desktop" className="w-full max-w-5xl mx-auto">

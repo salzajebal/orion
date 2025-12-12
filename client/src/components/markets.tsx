@@ -39,7 +39,7 @@ export function Markets() {
               MT5에서 어떤 것을 <span className="text-secondary-foreground border-b-4 border-secondary">거래할 수 있나요?</span>
             </h2>
             <p className="text-gray-600 text-lg">
-              INFINOX를 통해 가장 널리 사용되는 상품에서부터 가장 이국적인 FX 쌍에 이르기까지 다양한 글로벌 시장을 거래할 수 있습니다.
+              MT5를 통해 가장 널리 사용되는 상품에서부터 가장 이국적인 FX 쌍에 이르기까지 다양한 글로벌 시장을 거래할 수 있습니다.
             </p>
           </div>
           <Button variant="link" className="text-primary font-bold text-lg group p-0 h-auto">
@@ -62,7 +62,7 @@ export function Markets() {
           <div className="bg-primary p-8 rounded-xl shadow-lg flex flex-col justify-center items-start text-white">
             <h3 className="text-2xl font-bold mb-4">지금 거래를 시작하세요</h3>
             <p className="text-gray-300 mb-8">
-              수천 명의 트레이더와 함께 INFINOX에서 성공적인 투자를 경험해보세요.
+              수천 명의 트레이더와 함께 MT5에서 성공적인 투자를 경험해보세요.
             </p>
             <Button className="w-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold rounded-full">
               계정 개설하기
