@@ -54,7 +54,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full px-8 py-6 text-base font-bold flex items-center gap-2">
+            <Button 
+              className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full px-8 py-6 text-base font-bold flex items-center gap-2"
+              onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Download className="w-5 h-5" />
               MT5 다운로드
             </Button>

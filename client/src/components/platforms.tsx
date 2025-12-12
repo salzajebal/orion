@@ -7,7 +7,7 @@ import { Monitor, Smartphone, Globe } from "lucide-react";
 
 export function Platforms() {
   return (
-    <section className="py-24 bg-primary text-white">
+    <section id="platforms" className="py-24 bg-primary text-white">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           MT5 데스크탑, 모바일, 웹
