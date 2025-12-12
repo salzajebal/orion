@@ -1,0 +1,60 @@
+import { motion } from "framer-motion";
+import heroImage from "@assets/generated_images/laptop_and_mobile_phone_displaying_professional_forex_trading_charts.png";
+import { Button } from "@/components/ui/button";
+import { Download, UserPlus } from "lucide-react";
+
+export function Hero() {
+  return (
+    <section className="relative w-full bg-primary text-white overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none" />
+      
+      <div className="container py-20 md:py-32 flex flex-col md:flex-row items-center gap-12">
+        <div className="w-full md:w-1/2 space-y-8 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              MetaTrader 5 <span className="text-secondary">(MT5)</span>
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-light mt-4 text-gray-300">
+              MetaTrader 경험 업그레이드
+            </h2>
+            <p className="text-gray-400 mt-6 max-w-lg text-lg">
+              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 MT5를 Infinox에서 경험하세요.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Button className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full px-8 py-6 text-base font-bold flex items-center gap-2">
+              <Download className="w-5 h-5" />
+              MT5 다운로드
+            </Button>
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full px-8 py-6 text-base font-bold flex items-center gap-2 bg-transparent">
+              <UserPlus className="w-5 h-5" />
+              계정 가입하기
+            </Button>
+          </motion.div>
+        </div>
+
+        <div className="w-full md:w-1/2 relative z-10">
+          <motion.img
+            src={heroImage}
+            alt="MetaTrader 5 Platform"
+            className="w-full h-auto drop-shadow-2xl rounded-lg"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
