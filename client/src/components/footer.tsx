@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import logoImg from "@assets/telegram-cloud-photo-size-4-5899834457139645287-m_1765536158470.jpg";
 
 export function Footer() {
   return (
@@ -7,8 +8,8 @@ export function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <div className="text-2xl font-bold tracking-tighter text-white font-display mb-6">
-              INFINOX
+            <div className="mb-6">
+              <img src={logoImg} alt="Logo" className="h-16 w-16 rounded-full object-cover" />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               INFINOX는 전 세계 트레이더들에게 프리미엄 거래 서비스를 제공하는 글로벌 온라인 트레이딩 파트너입니다.

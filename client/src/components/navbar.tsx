@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Menu, X, Globe, User } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@assets/telegram-cloud-photo-size-4-5899834457139645287-m_1765536158470.jpg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,7 @@ export function Navbar() {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="text-2xl font-bold tracking-tighter text-primary font-display">
-            INFINOX
-          </div>
+          <img src={logoImg} alt="Logo" className="h-12 w-12 rounded-full object-cover" />
         </Link>
 
 
