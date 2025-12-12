@@ -32,7 +32,7 @@ export function Features() {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            메타트레이더5에서 <span className="text-secondary-foreground border-b-4 border-secondary">거래하세요</span>
+            MT5에서 <span className="text-secondary-foreground border-b-4 border-secondary">거래하세요</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             고급 MT5 플랫폼에서 거래합니다. 알고리즘 거래, 기술 및 기본 분석 도구, 광범위한 가격 분석 기능, 거래 신호 등에 액세스할 수 있습니다.
