@@ -56,12 +56,16 @@ export function Hero() {
           >
             <Button 
               className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center"
-              onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
             >
               <Download className="w-5 h-5" />
               MT5 다운로드
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 bg-transparent w-full sm:w-auto justify-center">
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-primary rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 bg-transparent w-full sm:w-auto justify-center"
+              onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
+            >
               <UserPlus className="w-5 h-5" />
               계정 가입하기
             </Button>

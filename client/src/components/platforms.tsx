@@ -85,7 +85,10 @@ export function Platforms() {
                   운영체제에 구애받지 않는 자유로움을 경험하세요.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full font-bold">웹트레이더 실행</Button>
+                  <Button 
+                    className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full font-bold"
+                    onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
+                  >웹트레이더 실행</Button>
                 </div>
               </div>
               <div className="flex-1">

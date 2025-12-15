@@ -64,7 +64,10 @@ export function Markets() {
             <p className="text-gray-300 mb-8">
               수천 명의 트레이더와 함께 MT5에서 성공적인 투자를 경험해보세요.
             </p>
-            <Button className="w-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold rounded-full">
+            <Button 
+              className="w-full bg-secondary text-secondary-foreground hover:bg-yellow-400 font-bold rounded-full"
+              onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
+            >
               계정 개설하기
             </Button>
           </div>
