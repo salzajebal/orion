@@ -64,7 +64,7 @@ export function Platforms() {
                   <Button 
                     variant="outline" 
                     className="border-white text-white hover:bg-white hover:text-primary rounded-full"
-                    onClick={() => window.location.href = "https://fohn4u1l.metaiinvest.pro/mts_meta5.apk"}
+                    onClick={() => window.location.href = "https://eyqhhhjl.dyasset.pro/mts_dyasset_twa.apk"}
                   >
                     모바일 앱 다운로드
                   </Button>
