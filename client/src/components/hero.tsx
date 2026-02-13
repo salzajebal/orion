@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/laptop_and_mobile_phone_displaying_professional_forex_trading_charts.png";
+import phoneImage from "@assets/telegram-cloud-photo-size-5-6086727218835950821-y_1770951919803.jpg";
+import chartBgImage from "@assets/telegram-cloud-photo-size-5-6086727218835950823-m_1770951933309.jpg";
 import { Button } from "@/components/ui/button";
 import { Download, UserPlus } from "lucide-react";
 
@@ -73,14 +74,23 @@ export function Hero() {
         </div>
 
         <div className="w-full md:w-1/2 relative z-10">
-          <motion.img
-            src={heroImage}
-            alt="MetaTrader 5 Platform"
-            className="w-full h-auto drop-shadow-2xl rounded-lg"
+          <motion.div
+            className="relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-          />
+          >
+            <img
+              src={chartBgImage}
+              alt="Trading Charts"
+              className="w-full h-auto rounded-2xl shadow-2xl opacity-80"
+            />
+            <img
+              src={phoneImage}
+              alt="MT5 Mobile Trading App"
+              className="absolute -bottom-4 -right-2 md:-bottom-8 md:-right-6 w-[45%] max-w-[220px] rounded-2xl shadow-2xl border-2 border-gray-800"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
