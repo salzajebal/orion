@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Menu, X, Globe, User } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/telegram-cloud-photo-size-4-5899834457139645287-m_1765536158470.jpg";
+import logoImg from "@assets/telegram-cloud-document-4-5881970613953764683_1773374272289.jpg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 md:gap-4">
           <img src={logoImg} alt="Logo" className="h-10 w-10 md:h-16 md:w-16 rounded-full object-cover" />
-          <span className="text-2xl md:text-4xl font-bold tracking-tighter text-primary font-display">MT5</span>
+          <span className="text-2xl md:text-4xl font-bold tracking-tighter text-primary font-display">SMART HTS</span>
         </Link>
 
 

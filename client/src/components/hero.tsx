@@ -17,13 +17,13 @@ export function Hero() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-              MetaTrader 5 <span className="text-secondary">(MT5)</span>
+              SMART HTS
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light mt-3 md:mt-4 text-gray-300">
-              MetaTrader 경험 업그레이드
+              SMART HTS 경험 업그레이드
             </h2>
             <p className="text-gray-400 mt-4 md:mt-6 max-w-lg text-base md:text-lg">
-              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 MT5를 경험하세요.
+              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 SMART HTS를 경험하세요.
             </p>
 
             <motion.div 
@@ -36,7 +36,7 @@ export function Hero() {
                 EVENT
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-2 pr-12">
-                26년도 Metatrader5 에서 <span className="text-secondary">최대 10% 제공</span>
+                26년도 SMART HTS 에서 <span className="text-secondary">최대 10% 제공</span>
               </h3>
               <div className="space-y-1 text-sm text-gray-300">
                 <p>기간: 2025.12.01 ~ 혜택 소진시</p>
@@ -59,7 +59,7 @@ export function Hero() {
               onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Download className="w-5 h-5" />
-              MT5 다운로드
+              SMART HTS 다운로드
             </Button>
             <Button 
               variant="outline" 
@@ -75,7 +75,7 @@ export function Hero() {
         <div className="w-full md:w-1/2 relative z-10">
           <motion.img
             src={heroImage}
-            alt="MetaTrader 5 Platform"
+            alt="SMART HTS Platform"
             className="w-full h-auto drop-shadow-2xl rounded-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

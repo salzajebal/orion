@@ -32,10 +32,10 @@ export function Features() {
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">
-            MT5에서 <span className="text-secondary-foreground border-b-4 border-secondary">거래하세요</span>
+            SMART HTS에서 <span className="text-secondary-foreground border-b-4 border-secondary">거래하세요</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-            고급 MT5 플랫폼에서 거래합니다. 알고리즘 거래, 기술 및 기본 분석 도구, 광범위한 가격 분석 기능, 거래 신호 등에 액세스할 수 있습니다.
+            고급 SMART HTS 플랫폼에서 거래합니다. 알고리즘 거래, 기술 및 기본 분석 도구, 광범위한 가격 분석 기능, 거래 신호 등에 액세스할 수 있습니다.
           </p>
         </div>
 
