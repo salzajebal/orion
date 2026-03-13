@@ -36,7 +36,7 @@ export function Platforms() {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <motion.a
-                    href="https://smart-trade.kr/download/"
+                    href="https://smart-trade.kr/download/SMART%20Setup%201.0.23.exe"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="button-download-hts"
