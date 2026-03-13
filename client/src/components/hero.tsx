@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/hero_trading_platform_clean.png";
 import { Button } from "@/components/ui/button";
-import { Download, UserPlus } from "lucide-react";
+import { Download } from "lucide-react";
 
 export function Hero() {
   return (
@@ -20,10 +20,10 @@ export function Hero() {
               SMART HTS
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light mt-3 md:mt-4 text-gray-300">
-              SMART HTS 경험 업그레이드
+              SMART 경험 업그레이드
             </h2>
             <p className="text-gray-400 mt-4 md:mt-6 max-w-lg text-base md:text-lg">
-              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 SMART HTS를 경험하세요.
+              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 SMART를 경험하세요.
             </p>
 
             <motion.div 
@@ -62,21 +62,13 @@ export function Hero() {
               <Download className="w-5 h-5" />
               SMART HTS 다운로드
             </Button>
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-primary rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 bg-transparent w-full sm:w-auto justify-center"
-              onClick={() => window.location.href = "https://btqac56x.metaiinvest.pro/"}
-            >
-              <UserPlus className="w-5 h-5" />
-              계정 가입하기
-            </Button>
           </motion.div>
         </div>
 
         <div className="w-full md:w-1/2 relative z-10">
           <motion.img
             src={heroImage}
-            alt="SMART HTS Platform"
+            alt="SMART Platform"
             className="w-full h-auto drop-shadow-2xl rounded-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}

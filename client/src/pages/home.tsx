@@ -23,7 +23,7 @@ export default function Home() {
       <ContentSection 
         title="다양한" 
         highlight="분석 도구들"
-        description="SMART HTS 를 사용하면 한 번에 최대 100개의 차트를 열 수 있으며, 21개의 사용 가능한 기간과 80개 이상의 기술 지표 및 분석 개체를 사용할 수 있습니다. 또한 사용자는 MQL5 개발 환경 내에서 자체 지표를 생성하고 뉴스 피드 및 경제 일정과 같은 기본 분석 도구에 액세스할 수 있습니다."
+        description="SMART 를 사용하면 한 번에 최대 100개의 차트를 열 수 있으며, 21개의 사용 가능한 기간과 80개 이상의 기술 지표 및 분석 개체를 사용할 수 있습니다. 또한 사용자는 MQL5 개발 환경 내에서 자체 지표를 생성하고 뉴스 피드 및 경제 일정과 같은 기본 분석 도구에 액세스할 수 있습니다."
         image={analysisToolsImg}
       />
       
@@ -53,7 +53,7 @@ export default function Home() {
       <ContentSection 
         title="경험이 풍부한" 
         highlight="거래자로부터 거래 신호 수신"
-        description="SMART HTS에서 경험이 풍부한 거래자의 거래 활동을 발견하고 거래 계정에서 동일한 거래를 수행할 수 있습니다. 신호 공급자의 거래 신호를 사용하여 실시간 거래를 복제합니다."
+        description="SMART에서 경험이 풍부한 거래자의 거래 활동을 발견하고 거래 계정에서 동일한 거래를 수행할 수 있습니다. 신호 공급자의 거래 신호를 사용하여 실시간 거래를 복제합니다."
         image={signalsImg}
         reversed={true}
       />
