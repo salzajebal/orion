@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import logoImg from "@assets/telegram-cloud-document-4-5881970613953764683_1773374272289.jpg";
 
 export function Footer() {
@@ -17,11 +16,6 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-6 md:pt-8 mt-6 md:mt-8 text-center flex flex-col justify-center items-center text-xs md:text-sm text-gray-500">
           <p>&copy; 2025 SMART. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4">
-            <Link href="#" className="hover:text-white">개인정보 처리방침</Link>
-            <Link href="#" className="hover:text-white">이용약관</Link>
-            <Link href="#" className="hover:text-white">쿠키 정책</Link>
-          </div>
         </div>
       </div>
     </footer>
