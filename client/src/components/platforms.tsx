@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import desktopImg from "@assets/generated_images/desktop_trading_platform_screenshot.png";
 import mobileImg from "@assets/generated_images/mobile_trading_app_screenshot.png";
-import { Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone, Download, ExternalLink } from "lucide-react";
 
 export function Platforms() {
   return (
@@ -12,7 +12,7 @@ export function Platforms() {
           SMART HTS / SMART MTS
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
-          어디서나 SMART와 함께 거래하세요. 데스크탑, 모바일, 웹 모든 기기에서 완벽한 거래 환경을 제공합니다.
+          어디서나 SMART와 함께 거래하세요. 데스크탑, 모바일 모든 기기에서 완벽한 거래 환경을 제공합니다.
         </p>
 
         <Tabs defaultValue="desktop" className="w-full max-w-5xl mx-auto">
@@ -34,13 +34,17 @@ export function Platforms() {
                   원하는 대로 차트를 사용자 지정하고, 전문적인 기술적 분석 도구를 활용하세요.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button 
-                    variant="outline" 
-                    className="border-white text-white hover:bg-white hover:text-primary rounded-full"
-                    onClick={() => window.location.href = "https://fohn4u1l.metaiinvest.pro/hts_meta5.exe"}
+                  <motion.a
+                    href="https://fohn4u1l.metaiinvest.pro/hts_meta5.exe"
+                    data-testid="button-download-hts"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-500 text-primary font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-amber-500/25 cursor-pointer"
+                    whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(245, 158, 11, 0.4)" }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    Windows 다운로드
-                  </Button>
+                    <Download className="w-5 h-5" />
+                    HTS 다운로드
+                  </motion.a>
                 </div>
               </div>
               <div className="flex-1">
@@ -57,13 +61,17 @@ export function Platforms() {
                   이동 중에도 거래 기회를 놓치지 마세요. SMART MTS 앱을 통해 언제 어디서나 시장에 접속하고 거래를 관리할 수 있습니다.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button 
-                    variant="outline" 
-                    className="border-white text-white hover:bg-white hover:text-primary rounded-full"
-                    onClick={() => window.location.href = "https://eyqhhhjl.dyasset.pro/mts_dyasset_twa.apk"}
+                  <motion.a
+                    href="https://eyqhhhjl.dyasset.pro/mts_dyasset_twa.apk"
+                    data-testid="button-access-mts"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-500 text-primary font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-amber-500/25 cursor-pointer"
+                    whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(245, 158, 11, 0.4)" }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    모바일 앱 다운로드
-                  </Button>
+                    <ExternalLink className="w-5 h-5" />
+                    MTS 접속
+                  </motion.a>
                 </div>
               </div>
               <div className="flex-1 flex justify-center">
