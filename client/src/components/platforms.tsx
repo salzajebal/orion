@@ -36,7 +36,9 @@ export function Platforms() {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <motion.a
-                    href="https://fohn4u1l.metaiinvest.pro/hts_meta5.exe"
+                    href="https://smart-trade.kr/download/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-testid="button-download-hts"
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3a6aa0] to-[#5a8ac0] text-white font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-blue-500/25 cursor-pointer border border-white/20"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(58, 106, 160, 0.4)" }}
@@ -63,7 +65,9 @@ export function Platforms() {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <motion.a
-                    href="https://eyqhhhjl.dyasset.pro/mts_dyasset_twa.apk"
+                    href="https://smart-trade.kr/mts"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-testid="button-access-mts"
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3a6aa0] to-[#5a8ac0] text-white font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-blue-500/25 cursor-pointer border border-white/20"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(58, 106, 160, 0.4)" }}
