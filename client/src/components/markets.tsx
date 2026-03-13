@@ -57,7 +57,6 @@ export function Markets() {
               <p className="text-gray-600 leading-relaxed">{market.description}</p>
             </div>
           ))}
-          
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/hero_trading_platform_clean.png";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, Smartphone } from "lucide-react";
 
 export function Hero() {
   return (
@@ -32,11 +32,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <p className="text-2xl md:text-3xl font-bold text-secondary">500+</p>
-                  <p className="text-xs md:text-sm text-gray-400 mt-1">거래 가능 상품</p>
-                </div>
+              <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <p className="text-2xl md:text-3xl font-bold text-secondary">0.0</p>
                   <p className="text-xs md:text-sm text-gray-400 mt-1">최소 스프레드</p>
@@ -55,13 +51,32 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button 
-              className="bg-secondary text-secondary-foreground hover:bg-yellow-400 rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center"
-              onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Download className="w-5 h-5" />
-              SMART HTS 다운로드
-            </Button>
+              <Button 
+                className="bg-gradient-to-r from-amber-400 to-yellow-500 text-primary hover:from-amber-300 hover:to-yellow-400 rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-amber-500/25"
+                onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Download className="w-5 h-5" />
+                SMART HTS 다운로드
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <Button 
+                className="bg-gradient-to-r from-slate-100 to-white text-primary hover:from-white hover:to-slate-50 rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-white/15 border border-white/30"
+                onClick={() => window.location.href = "https://eyqhhhjl.dyasset.pro/mts_dyasset_twa.apk"}
+              >
+                <Smartphone className="w-5 h-5" />
+                SMART MTS 접속하기
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
 
