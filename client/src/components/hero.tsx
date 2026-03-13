@@ -27,23 +27,24 @@ export function Hero() {
             </p>
 
             <motion.div 
-              className="mt-6 md:mt-8 bg-white/5 backdrop-blur-sm border border-secondary/50 rounded-xl p-4 md:p-6 relative overflow-hidden max-w-md cursor-pointer hover:bg-white/10 hover:border-secondary transition-all duration-300 group"
-              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="mt-6 md:mt-8 bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 md:p-6 max-w-md"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="absolute top-0 right-0 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg animate-pulse">
-                EVENT
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-2 pr-12">
-                26년도 SMART HTS 에서 <span className="text-secondary">최대 10% 제공</span>
-              </h3>
-              <div className="space-y-1 text-sm text-gray-300">
-                <p>기간: 2025.12.01 ~ 혜택 소진시</p>
-                <p>대상: 신규 코드 가입고객</p>
-              </div>
-              <div className="mt-4 flex items-center gap-2 text-secondary text-sm font-semibold group-hover:gap-3 transition-all">
-                자세히 보기 <span className="text-lg">→</span>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-secondary">500+</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">거래 가능 상품</p>
+                </div>
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-secondary">0.0</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">최소 스프레드</p>
+                </div>
+                <div>
+                  <p className="text-2xl md:text-3xl font-bold text-secondary">24/7</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">고객 지원</p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
