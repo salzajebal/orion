@@ -17,7 +17,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-              SMART HTS
+              SMART
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light mt-3 md:mt-4 text-gray-300">
               SMART 경험 업그레이드
