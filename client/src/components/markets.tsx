@@ -1,30 +1,25 @@
-import { BarChart3, Coins, Flame, Wheat, TrendingUp } from "lucide-react";
+import { BarChart3, Coins, Flame, TrendingUp } from "lucide-react";
 
 const markets = [
   {
     icon: BarChart3,
     title: "지수 선물",
-    description: "나스닥, S&P500, 다우존스, 항셍 등 글로벌 주요 지수 선물 거래."
-  },
-  {
-    icon: Coins,
-    title: "통화 선물",
-    description: "유로, 엔화, 파운드, 호주달러 등 주요 통화 선물 거래."
+    description: "마이크로나스닥, S&P500, 마이크로S&P500, 항셍, 미니항셍"
   },
   {
     icon: TrendingUp,
     title: "금속 선물",
-    description: "금, 은, 구리 등 귀금속 및 비철금속 선물 거래."
+    description: "금, 마이크로금, 은, 구리"
   },
   {
     icon: Flame,
     title: "에너지 선물",
-    description: "원유(WTI, 브렌트), 천연가스 등 에너지 상품 선물 거래."
+    description: "크루드오일, 마이크로크루드오일"
   },
   {
-    icon: Wheat,
-    title: "농산물 선물",
-    description: "옥수수, 대두, 밀, 설탕 등 농산물 선물 거래."
+    icon: Coins,
+    title: "통화 선물",
+    description: "일본엔화, 호주달러, 영국파운드, 유로FX"
   }
 ];
 
@@ -43,7 +38,7 @@ export function Markets() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {markets.map((market, index) => (
             <div key={index} data-testid={`card-market-${index}`} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border-l-4 border-transparent hover:border-secondary group">
               <div className="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
