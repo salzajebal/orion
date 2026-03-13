@@ -22,13 +22,13 @@ export function ContentSection({ title, highlight, description, image, reversed 
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-              {title} <span className="text-secondary-foreground relative inline-block">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+              {title} <span className="text-[#3a6aa0] relative inline-block">
                 {highlight}
-                <span className="absolute bottom-1 left-0 w-full h-3 bg-secondary/30 -z-10 transform skew-x-12"></span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-[#3a6aa0]/20 -z-10 transform skew-x-12"></span>
               </span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            <p className="text-slate-600 text-lg leading-relaxed mb-6">
               {description}
             </p>
             
@@ -36,8 +36,8 @@ export function ContentSection({ title, highlight, description, image, reversed 
               <ul className="space-y-3 mt-6">
                 {listItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-secondary mt-1 shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle2 className="w-5 h-5 text-[#3a6aa0] mt-1 shrink-0" />
+                    <span className="text-slate-700">{item}</span>
                   </li>
                 ))}
               </ul>

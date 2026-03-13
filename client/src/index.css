@@ -31,54 +31,51 @@
 }
 
 :root {
-  /* Infinox Dark Blue */
-  --background: 220 30% 98%;
-  --foreground: 222 47% 11%;
+  --background: 216 30% 93%;
+  --foreground: 215 25% 27%;
 
-  /* Navy Blue */
-  --primary: 222 47% 11%;
+  --primary: 212 42% 43%;
   --primary-foreground: 0 0% 100%;
 
-  /* Bright Yellow/Gold Accent */
-  --secondary: 45 100% 50%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 212 42% 43%;
+  --secondary-foreground: 0 0% 100%;
 
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card: 210 33% 96%;
+  --card-foreground: 215 25% 27%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 215 25% 27%;
 
-  --muted: 210 40% 96%;
+  --muted: 214 32% 91%;
   --muted-foreground: 215 16% 47%;
 
-  --accent: 210 40% 96%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 214 32% 91%;
+  --accent-foreground: 215 25% 27%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 222 47% 11%;
+  --border: 214 25% 85%;
+  --input: 214 25% 85%;
+  --ring: 212 42% 43%;
 
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: 222 47% 11%;
+  --background: 215 30% 15%;
   --foreground: 210 40% 98%;
 
   --primary: 210 40% 98%;
-  --primary-foreground: 222 47% 20%;
+  --primary-foreground: 215 30% 15%;
 
-  --secondary: 45 100% 50%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 212 42% 55%;
+  --secondary-foreground: 0 0% 100%;
 
-  --card: 222 47% 15%;
+  --card: 215 30% 20%;
   --card-foreground: 210 40% 98%;
 
-  --popover: 222 47% 11%;
+  --popover: 215 30% 15%;
   --popover-foreground: 210 40% 98%;
 
   --muted: 217 33% 17%;
@@ -112,7 +109,7 @@
 }
 
 .btn-primary {
-  @apply bg-secondary text-secondary-foreground font-bold px-8 py-3 rounded-full hover:brightness-110 transition-all uppercase tracking-wide text-sm;
+  @apply bg-primary text-primary-foreground font-bold px-8 py-3 rounded-full hover:brightness-110 transition-all uppercase tracking-wide text-sm;
 }
 
 .btn-outline {

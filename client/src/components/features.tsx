@@ -28,25 +28,25 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-12 md:py-20 bg-gray-50">
+    <section id="features" className="py-12 md:py-20">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">
-            SMART에서 <span className="text-secondary-foreground border-b-4 border-secondary">해외선물 거래</span>
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-800 mb-4">
+            SMART에서 <span className="text-[#3a6aa0] border-b-4 border-[#3a6aa0]/30">해외선물 거래</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">
             SMART 플랫폼에서 해외선물을 거래하세요. 빠른 체결, 기술 분석 도구, 실시간 시세, 안정적인 서버 환경을 제공합니다.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {features.map((feature, index) => (
-            <div key={index} data-testid={`card-feature-${index}`} className="bg-white p-4 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-gray-100">
-              <div className="w-14 h-14 md:w-20 md:h-20 mb-4 md:mb-6 bg-gray-50 rounded-full flex items-center justify-center p-3 md:p-4">
+            <div key={index} data-testid={`card-feature-${index}`} className="bg-white/70 backdrop-blur-sm p-4 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center border border-slate-200/60">
+              <div className="w-14 h-14 md:w-20 md:h-20 mb-4 md:mb-6 bg-[#3a6aa0]/5 rounded-full flex items-center justify-center p-3 md:p-4">
                 <img src={feature.icon} alt={feature.title} className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-base md:text-xl font-bold text-primary mb-2 md:mb-3">{feature.title}</h3>
-              <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{feature.description}</p>
+              <h3 className="text-base md:text-xl font-bold text-slate-800 mb-2 md:mb-3">{feature.title}</h3>
+              <p className="text-slate-500 text-xs md:text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
