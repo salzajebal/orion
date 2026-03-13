@@ -23,14 +23,14 @@ export default function Home() {
       <ContentSection 
         title="다양한" 
         highlight="분석 도구들"
-        description="SMART 를 사용하면 21개의 사용 가능한 기간과 80개 이상의 기술 지표 및 분석 개체를 사용할 수 있습니다. 또한 사용자는 MQL5 개발 환경 내에서 자체 지표를 생성하고 뉴스 피드 및 경제 일정과 같은 기본 분석 도구에 액세스할 수 있습니다."
+        description="SMART를 사용하면 다양한 시간대의 차트와 80개 이상의 기술 지표 및 분석 도구를 활용할 수 있습니다. 실시간 해외선물 시세와 경제 일정 등 기본 분석 도구에도 액세스할 수 있습니다."
         image={analysisToolsImg}
       />
       
       <ContentSection 
-        title="전문가 조언자를 통한" 
+        title="체계적인" 
         highlight="자동화된 거래"
-        description="EA(Expert Advisors) 는 거래 활동의 분석 및 실행을 자동화하는 알고리즘 거래 모델입니다. EA를 사용하면 거래 로봇을 사용하여 거래를 실행하고 거래 성과를 분석할 수 있습니다."
+        description="자동 매매 시스템을 활용하여 해외선물 거래를 자동화할 수 있습니다. 사전 설정된 조건에 따라 자동으로 주문을 실행하고, 거래 성과를 분석할 수 있습니다."
         image={automatedTradingImg}
         reversed={true}
       />
@@ -40,7 +40,7 @@ export default function Home() {
       <ContentSection 
         title="주문 시스템 및" 
         highlight="주문 타입"
-        description="모든 유형의 주문에 대한 지원을 포함하여 거래 운영을 유연하게 제어하는 두 가지 유형의 포지션 관리 시스템을 사용합니다. 외환 거래를 할 때는 위험 관리 주문 모드를 사용하거나, 거래소에서 계좌 관리 모드를 사용합니다."
+        description="모든 유형의 주문에 대한 지원을 포함하여 해외선물 거래를 유연하게 제어할 수 있습니다. 다양한 주문 유형과 위험 관리 도구를 활용하여 체계적인 포지션 관리가 가능합니다."
         image={orderSystemImg}
         listItems={[
           "시장가 주문 및 지정가 주문 지원",
@@ -53,7 +53,7 @@ export default function Home() {
       <ContentSection 
         title="경험이 풍부한" 
         highlight="거래자로부터 거래 신호 수신"
-        description="SMART에서 경험이 풍부한 거래자의 거래 활동을 발견하고 거래 계정에서 동일한 거래를 수행할 수 있습니다. 신호 공급자의 거래 신호를 사용하여 실시간 거래를 복제합니다."
+        description="SMART에서 경험이 풍부한 해외선물 트레이더의 거래 전략을 참고하고, 실시간 거래 신호를 활용하여 보다 효과적인 투자 판단을 내릴 수 있습니다."
         image={signalsImg}
         reversed={true}
       />

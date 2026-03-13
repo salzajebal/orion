@@ -20,10 +20,10 @@ export function Hero() {
               SMART
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light mt-3 md:mt-4 text-gray-300">
-              SMART 경험 업그레이드
+              해외선물 거래의 새로운 기준
             </h2>
             <p className="text-gray-400 mt-4 md:mt-6 max-w-lg text-base md:text-lg">
-              고급 차트, 자동 매매, 다양한 분석 도구를 제공하는 세계적인 거래 플랫폼 SMART를 경험하세요.
+              고급 차트, 빠른 체결, 다양한 분석 도구를 제공하는 해외선물 전문 거래 플랫폼 SMART를 경험하세요.
             </p>
 
             <motion.div 
@@ -34,12 +34,12 @@ export function Hero() {
             >
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
-                  <p className="text-2xl md:text-3xl font-bold text-secondary">0.0</p>
-                  <p className="text-xs md:text-sm text-gray-400 mt-1">최소 스프레드</p>
+                  <p className="text-2xl md:text-3xl font-bold text-secondary">0.1초</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">빠른 체결 속도</p>
                 </div>
                 <div>
-                  <p className="text-2xl md:text-3xl font-bold text-secondary">24/7</p>
-                  <p className="text-xs md:text-sm text-gray-400 mt-1">고객 지원</p>
+                  <p className="text-2xl md:text-3xl font-bold text-secondary">24/5</p>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">실시간 고객 지원</p>
                 </div>
               </div>
             </motion.div>
