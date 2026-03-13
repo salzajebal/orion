@@ -1,6 +1,6 @@
 export function AnimatedBackground() {
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden motion-reduce:hidden">
       <svg
         className="w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
