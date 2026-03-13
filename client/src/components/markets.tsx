@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart3, Coins, Flame, Wheat, TrendingUp } from "lucide-react";
+import { BarChart3, Coins, Flame, Wheat, TrendingUp } from "lucide-react";
 
 const markets = [
   {
