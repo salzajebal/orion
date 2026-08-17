@@ -1,5 +1,4 @@
 import symbolImg from "@assets/jw_symbol_no_bg.png";
-import logoImg from "@assets/jw_logo.png";
 
 const stats = [
   ["10만+", "회원"],
@@ -17,15 +16,7 @@ export function Hero() {
         backgroundSize: "44px 44px",
       }}
     >
-      <div className="container flex flex-col items-center px-5 pb-12 pt-10 text-center sm:px-6 sm:pt-12">
-
-        {/* 로고 */}
-        <img
-          src={logoImg}
-          alt="JW에셋"
-          className="mb-7 h-10 w-auto object-contain sm:h-11"
-          draggable={false}
-        />
+      <div className="container flex flex-col items-center px-5 pb-12 pt-20 text-center sm:px-6 sm:pt-24">
 
         {/* 2줄 제목 */}
         <h1 className="break-keep font-bold leading-tight tracking-tight">
