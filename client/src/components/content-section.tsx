@@ -34,7 +34,7 @@ export function ContentSection({
           <img
             src={image}
             alt={`${title} ${highlight}`}
-            className="h-full w-full object-cover"
+            className="h-full max-h-[420px] w-full object-cover md:max-h-none"
           />
         </motion.div>
 
