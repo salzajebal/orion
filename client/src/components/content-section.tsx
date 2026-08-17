@@ -12,7 +12,7 @@ interface ContentSectionProps {
 
 export function ContentSection({ title, highlight, description, image, reversed = false, listItems }: ContentSectionProps) {
   return (
-    <section className="py-20 overflow-hidden">
+    <section className={`overflow-hidden py-20 md:py-28 ${reversed ? "bg-[#f8fafc]" : "bg-white"}`}>
       <div className="container">
         <div className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16`}>
           <motion.div 
@@ -46,7 +46,7 @@ export function ContentSection({ title, highlight, description, image, reversed 
 
           <div className="w-full md:w-1/2">
             <motion.div
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
+              className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}

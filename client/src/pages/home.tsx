@@ -6,7 +6,6 @@ import { Platforms } from "@/components/platforms";
 import { Markets } from "@/components/markets";
 import { Steps } from "@/components/steps";
 import { Footer } from "@/components/footer";
-import { AnimatedBackground } from "@/components/animated-background";
 
 import analysisToolsImg from "@assets/generated_images/desktop_trading_platform_screenshot.png";
 import automatedTradingImg from "@assets/generated_images/laptop_and_mobile_phone_displaying_professional_forex_trading_charts.png";
@@ -15,9 +14,8 @@ import signalsImg from "@assets/generated_images/mobile_trading_app_screenshot.p
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans relative" style={{ background: "linear-gradient(135deg, #e8eef5 0%, #c8d8e8 50%, #e0e8f0 100%)" }}>
-      <AnimatedBackground />
-      <div className="relative z-10">
+    <div className="min-h-screen bg-white font-sans">
+      <div>
         <Navbar />
         <Hero />
         <Features />
