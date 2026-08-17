@@ -21,7 +21,7 @@ export function Hero() {
         <img
           src={symbolImg}
           alt=""
-          className="w-[420px] opacity-[0.18] sm:w-[520px] md:w-[640px] lg:w-[720px]"
+          className="w-[280px] opacity-[0.18] sm:w-[380px] md:w-[520px] lg:w-[620px]"
           draggable={false}
         />
       </div>
