@@ -24,23 +24,6 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* 히어로 하단 stat 밴드 */}
-      <motion.div
-        className="border-y border-slate-200 bg-white"
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <div className="container flex divide-x divide-slate-200 px-4 md:px-6">
-          {heroStats.map(([value, label]) => (
-            <div key={label} className="min-w-0 flex-1 py-5 text-center">
-              <p className="text-lg font-bold text-slate-900 sm:text-xl md:text-2xl">{value}</p>
-              <p className="mt-0.5 text-[10px] text-slate-400 sm:text-xs">{label}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
       <Features />
       <Platforms />
 
