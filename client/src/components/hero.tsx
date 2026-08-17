@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import symbolImg from "@assets/jw_symbol.png";
-import { Download, Smartphone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const stats = [
   ["0.1초", "빠른 체결"],
@@ -74,31 +72,6 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* 버튼 */}
-        <motion.div
-          className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.42 }}
-        >
-          <Button
-            asChild
-            className="h-12 rounded-lg bg-[#3a6aa0] px-7 text-sm font-bold text-white hover:bg-[#315b8b]"
-          >
-            <a href="https://hts.jw-asset.kr" target="_blank" rel="noopener noreferrer">
-              <Download className="mr-2 h-4 w-4" />HTS 다운로드
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="h-12 rounded-lg border-[#3a6aa0] px-7 text-sm font-bold text-[#3a6aa0] hover:bg-[#f0f7ff]"
-          >
-            <a href="https://jw-asset.kr/" target="_blank" rel="noopener noreferrer">
-              <Smartphone className="mr-2 h-4 w-4" />MTS 접속
-            </a>
-          </Button>
-        </motion.div>
 
       </div>
     </section>

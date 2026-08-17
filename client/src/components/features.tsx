@@ -4,35 +4,69 @@ import { Activity, BarChart2, Shield, Zap } from "lucide-react";
 const features = [
   {
     Icon: Zap,
+    num: "01",
+    stat: "0.1초",
+    statLabel: "평균 체결 속도",
     title: "초고속 주문 체결",
     description:
-      "0.1초 이내의 초저지연 체결 인프라로 시장의 빠른 움직임에 정확히 대응합니다. 슬리피지를 최소화하고 최적의 진입 타이밍을 확보하세요.",
+      "초저지연 체결 인프라를 기반으로 시장의 순간적인 움직임에 정확히 대응합니다. 슬리피지를 최소화하여 전략이 의도한 가격에 실행됩니다.",
+    points: ["저지연 전용 서버", "슬리피지 최소화", "실시간 호가 반영"],
   },
   {
     Icon: BarChart2,
-    title: "전문 기술 분석 도구",
+    num: "02",
+    stat: "80+",
+    statLabel: "기술 지표 제공",
+    title: "전문 기술 분석 환경",
     description:
-      "80종 이상의 기술 지표, 멀티 타임프레임 차트, 시장 깊이(DOM) 분석을 통해 거래 전략을 정밀하게 설계할 수 있습니다.",
+      "80종 이상의 기술 지표, 멀티 타임프레임 차트, 시장 깊이(DOM) 패널을 하나의 화면에서 운용합니다. 근거 있는 매매 판단을 내리세요.",
+    points: ["멀티 타임프레임 차트", "DOM 시장 깊이 분석", "커스텀 지표 설정"],
   },
   {
     Icon: Activity,
-    title: "실시간 글로벌 시세",
+    num: "03",
+    stat: "24/5",
+    statLabel: "실시간 시세 제공",
+    title: "글로벌 실시간 시세",
     description:
-      "CME·CBOT 등 주요 글로벌 거래소의 실시간 선물 시세를 지연 없이 제공합니다. 경제 지표 캘린더와 연동해 시장 이슈를 즉시 파악하세요.",
+      "CME·CBOT 등 주요 거래소의 선물 시세를 지연 없이 제공합니다. 경제 지표 캘린더와 연동하여 시장 이슈를 즉각적으로 파악하세요.",
+    points: ["CME·CBOT 직결", "경제 지표 캘린더", "다중 종목 동시 모니터링"],
   },
   {
     Icon: Shield,
-    title: "99.9% 안정적 인프라",
+    num: "04",
+    stat: "99.9%",
+    statLabel: "서버 가동률",
+    title: "엔터프라이즈급 인프라",
     description:
-      "이중화 서버 구조와 24/5 모니터링 체계로 거래 중단 없는 환경을 보장합니다. 장 중에도 안심하고 포지션을 유지하세요.",
+      "이중화 서버 구조와 상시 모니터링 체계로 거래 중단 없는 환경을 보장합니다. 장중 어느 순간에도 안정적인 접속을 유지하세요.",
+    points: ["이중화 서버 구조", "24/5 시스템 모니터링", "데이터 암호화 보안"],
   },
 ];
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 export function Features() {
   return (
     <section id="features" className="bg-white py-16 md:py-24">
       <div className="container px-4 md:px-6">
-        <div className="mb-10 md:mb-14 max-w-2xl">
+
+        {/* 헤더 */}
+        <motion.div
+          className="mb-12 md:mb-16 max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <span className="inline-flex items-center rounded-full border border-[#3a6aa0] bg-white px-4 py-1.5 text-sm font-semibold text-[#3a6aa0]">
             플랫폼 특징
           </span>
@@ -40,28 +74,74 @@ export function Features() {
             JW에셋이 선택받는 이유
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-500 md:text-lg">
-            해외선물 거래에 필요한 핵심 기능을 하나의 플랫폼에 담았습니다.
+            해외선물 거래에 필요한 핵심 역량을 하나의 플랫폼에 집약했습니다.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map(({ Icon, title, description }, index) => (
+        {/* 카드 그리드 */}
+        <motion.div
+          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          {features.map(({ Icon, num, stat, statLabel, title, description, points }) => (
             <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.07, duration: 0.4 }}
-              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-colors hover:border-[#3a6aa0]/50"
+              key={num}
+              variants={cardVariants}
+              whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(58,106,160,0.12)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 22 }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm cursor-default"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0f7ff]">
-                <Icon className="h-6 w-6 text-[#3a6aa0]" />
+              {/* 배경 번호 */}
+              <span className="absolute -right-2 -top-3 select-none text-7xl font-black text-slate-100 transition-colors group-hover:text-[#3a6aa0]/10">
+                {num}
+              </span>
+
+              {/* 아이콘 */}
+              <motion.div
+                className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0f7ff] transition-colors group-hover:bg-[#3a6aa0]"
+                whileHover={{ rotate: [0, -8, 8, 0] }}
+                transition={{ duration: 0.4 }}
+              >
+                <Icon className="h-6 w-6 text-[#3a6aa0] transition-colors group-hover:text-white" />
+              </motion.div>
+
+              {/* 수치 강조 */}
+              <div className="relative z-10 mt-5 flex items-end gap-2">
+                <span className="text-3xl font-black text-slate-900 leading-none">{stat}</span>
+                <span className="mb-0.5 text-xs text-slate-400">{statLabel}</span>
               </div>
-              <h3 className="mt-5 text-base font-bold text-slate-900">{title}</h3>
-              <p className="mt-2.5 text-sm leading-7 text-slate-500">{description}</p>
+
+              {/* 제목 */}
+              <h3 className="relative z-10 mt-3 text-base font-bold text-slate-900">{title}</h3>
+
+              {/* 구분선 */}
+              <div className="relative z-10 my-4 h-px w-full bg-slate-100 transition-colors group-hover:bg-[#3a6aa0]/20" />
+
+              {/* 설명 */}
+              <p className="relative z-10 text-sm leading-7 text-slate-500">{description}</p>
+
+              {/* 포인트 리스트 */}
+              <ul className="relative z-10 mt-5 space-y-1.5">
+                {points.map((p) => (
+                  <li key={p} className="flex items-center gap-2 text-xs text-slate-500">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3a6aa0]" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+
+              {/* 하단 accent 라인 */}
+              <motion.div
+                className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#3a6aa0] rounded-b-2xl"
+                whileHover={{ width: "100%" }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+              />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

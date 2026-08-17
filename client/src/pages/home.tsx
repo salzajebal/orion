@@ -3,8 +3,6 @@ import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { ContentSection } from "@/components/content-section";
 import { Platforms } from "@/components/platforms";
-import { Markets } from "@/components/markets";
-import { Steps } from "@/components/steps";
 import { Footer } from "@/components/footer";
 
 import analysisToolsImg from "@assets/generated_images/desktop_trading_platform_screenshot.png";
@@ -34,8 +32,6 @@ export default function Home() {
         reversed={true}
       />
 
-      <Steps />
-
       <ContentSection
         title="체계적인 주문 관리와"
         highlight="리스크 제어"
@@ -58,7 +54,6 @@ export default function Home() {
       />
 
       <Platforms />
-      <Markets />
       <Footer />
     </div>
   );
