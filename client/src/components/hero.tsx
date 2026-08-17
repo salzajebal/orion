@@ -27,7 +27,7 @@ export function Hero() {
       </div>
 
       {/* 콘텐츠 */}
-      <div className="container relative z-10 flex flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28">
+      <div className="container relative z-10 flex flex-col items-center px-4 py-16 pb-24 text-center sm:px-6 sm:py-20 sm:pb-28 md:py-32 md:pb-36">
 
         {/* 로고 — 원래 색상 */}
         <motion.img
