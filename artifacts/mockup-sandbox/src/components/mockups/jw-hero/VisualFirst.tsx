@@ -26,15 +26,6 @@ export function VisualFirst() {
 
       {/* 히어로 — 중앙 정렬 */}
       <div className="relative z-10 flex flex-col items-center px-8 pt-16 pb-20 text-center">
-        {/* 상단 레이블 */}
-        <div className="mb-6 flex items-center gap-2">
-          <span className="h-px w-8 bg-[#3a6aa0]" />
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3a6aa0]">
-            해외선물 전문 플랫폼
-          </p>
-          <span className="h-px w-8 bg-[#3a6aa0]" />
-        </div>
-
         {/* 메인 타이포 */}
         <h1 className="break-keep text-[clamp(2.8rem,6vw,5.5rem)] font-black leading-[1.05] tracking-tight text-slate-900">
           JW에셋으로<br />해외선물을 거래하세요

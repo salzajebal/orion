@@ -33,11 +33,6 @@ export function TypoFirst() {
 
       {/* 히어로 */}
       <div className="relative z-10 px-12 pt-16 pb-24">
-        {/* 상단 레이블 */}
-        <p className="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-[#3a6aa0]">
-          해외선물 전문 플랫폼
-        </p>
-
         {/* 메인 타이포 */}
         <h1
           className="break-keep text-[clamp(3rem,7vw,6.5rem)] font-black leading-[1.0] tracking-tight text-slate-900"
