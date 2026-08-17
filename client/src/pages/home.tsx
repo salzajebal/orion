@@ -16,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Features />
+      <Platforms />
 
       <ContentSection
         title="전문가 수준의"
@@ -53,7 +54,6 @@ export default function Home() {
         reversed={true}
       />
 
-      <Platforms />
       <Footer />
     </div>
   );
