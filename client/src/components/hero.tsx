@@ -10,8 +10,23 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-white">
-      <div className="container flex flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28">
+    <section className="relative overflow-hidden bg-white">
+
+      {/* 뒷배경 로고 — absolute, 중앙 정렬, 반투명 */}
+      <div
+        className="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+        aria-hidden="true"
+      >
+        <img
+          src={symbolImg}
+          alt=""
+          className="w-[420px] opacity-[0.08] sm:w-[520px] md:w-[640px] lg:w-[720px]"
+          draggable={false}
+        />
+      </div>
+
+      {/* 콘텐츠 */}
+      <div className="container relative z-10 flex flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28">
 
         {/* 배지 */}
         <motion.span
@@ -42,27 +57,12 @@ export function Hero() {
           빠른 체결과 선명한 분석 환경으로 글로벌 선물 시장을 더 자신 있게 만나보세요.
         </motion.p>
 
-        {/* 로고 — 정중앙, 풀 컬러 */}
-        <motion.div
-          className="my-10 md:my-14"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, type: "spring", stiffness: 120, damping: 16 }}
-        >
-          <img
-            src={symbolImg}
-            alt="JW에셋 심볼"
-            className="h-44 w-44 object-contain drop-shadow-xl sm:h-56 sm:w-56 md:h-72 md:w-72"
-            draggable={false}
-          />
-        </motion.div>
-
         {/* 통계 */}
         <motion.div
-          className="flex w-full max-w-lg divide-x divide-slate-200 border-y border-slate-200 py-4"
+          className="mt-10 flex w-full max-w-lg divide-x divide-slate-200 border-y border-slate-200 py-4 md:mt-14"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           {stats.map(([value, label]) => (
             <div key={label} className="min-w-0 flex-1 px-2 text-center sm:px-4">
@@ -71,7 +71,6 @@ export function Hero() {
             </div>
           ))}
         </motion.div>
-
 
       </div>
     </section>
