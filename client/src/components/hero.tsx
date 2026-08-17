@@ -68,7 +68,7 @@ export function Hero() {
             >
               <Button 
                 className="bg-white/80 backdrop-blur-sm text-slate-700 hover:bg-white rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg border border-slate-200"
-                onClick={() => window.open("https://smart-trade.kr/mts", "_blank")}
+                onClick={() => window.open("https://jw-asset.kr/", "_blank")}
               >
                 <Smartphone className="w-5 h-5" />
                 SMART MTS 접속하기

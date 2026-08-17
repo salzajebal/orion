@@ -1,90 +1,101 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
-import desktopImg from "@assets/generated_images/desktop_trading_platform_screenshot.png";
-import mobileImg from "@assets/generated_images/mobile_trading_app_screenshot.png";
-import { Monitor, Smartphone, Download, ExternalLink } from "lucide-react";
+import { Monitor, Smartphone, Download, ExternalLink, CheckCircle2 } from "lucide-react";
 
 export function Platforms() {
   return (
     <section id="platforms" className="py-16 md:py-24 bg-[#1e3a5f] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a5f] via-[#2c4a6e] to-[#1a3050] pointer-events-none" />
-      <div className="container text-center px-4 md:px-6 relative z-10">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4">
-          SMART HTS / SMART MTS
-        </h2>
-        <p className="text-slate-300 max-w-2xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
-          어디서나 SMART와 함께 거래하세요. 데스크탑, 모바일 모든 기기에서 완벽한 거래 환경을 제공합니다.
-        </p>
 
-        <Tabs defaultValue="desktop" className="w-full max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 bg-white/10 p-1 rounded-full mb-8 md:mb-12">
-            <TabsTrigger value="desktop" className="flex-1 rounded-full data-[state=active]:bg-[#3a6aa0] data-[state=active]:text-white py-2 md:py-3 text-xs md:text-sm font-bold justify-center">
-              <Monitor className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 shrink-0" /> SMART HTS
-            </TabsTrigger>
-            <TabsTrigger value="mobile" className="flex-1 rounded-full data-[state=active]:bg-[#3a6aa0] data-[state=active]:text-white py-2 md:py-3 text-xs md:text-sm font-bold justify-center">
-              <Smartphone className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 shrink-0" /> SMART MTS
-            </TabsTrigger>
-          </TabsList>
+      <div className="container px-4 md:px-6 relative z-10">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">SMART HTS / MTS</h2>
+          <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
+            데스크탑과 모바일, 모든 기기에서 해외선물을 거래하세요.
+          </p>
+        </div>
 
-          <TabsContent value="desktop" className="mt-0">
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-left">
-              <div className="flex-1 space-y-4 md:space-y-6">
-                <h3 className="text-xl md:text-2xl font-bold text-[#6aafff]">SMART HTS 데스크탑</h3>
-                <p className="text-slate-300 leading-relaxed text-sm md:text-base">
-                  SMART HTS를 데스크톱이나 노트북에 직접 설치하면 플랫폼의 모든 기능을 이용할 수 있습니다. 
-                  원하는 대로 차트를 사용자 지정하고, 전문적인 기술적 분석 도구를 활용하세요.
-                </p>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <motion.a
-                    href="https://smart-trade.kr/download/SMART%20Setup%201.0.23.exe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="button-download-hts"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3a6aa0] to-[#5a8ac0] text-white font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-blue-500/25 cursor-pointer border border-white/20"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(58, 106, 160, 0.4)" }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <Download className="w-5 h-5" />
-                    HTS 다운로드
-                  </motion.a>
-                </div>
+        {/* 한 박스 안에 HTS + MTS */}
+        <motion.div
+          className="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* HTS 영역 */}
+          <div className="p-6 md:p-10 border-b border-white/10">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="flex-shrink-0 w-14 h-14 bg-[#3a6aa0]/30 rounded-2xl flex items-center justify-center border border-[#3a6aa0]/40">
+                <Monitor className="w-7 h-7 text-[#6aafff]" />
               </div>
               <div className="flex-1">
-                <img src={desktopImg} alt="Desktop Platform" className="rounded-lg shadow-2xl border border-white/10" />
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="mobile" className="mt-0">
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-left">
-              <div className="flex-1 space-y-4 md:space-y-6">
-                <h3 className="text-xl md:text-2xl font-bold text-[#6aafff]">SMART MTS</h3>
-                <p className="text-slate-300 leading-relaxed text-sm md:text-base">
-                  이동 중에도 거래 기회를 놓치지 마세요. SMART MTS 앱을 통해 언제 어디서나 시장에 접속하고 거래를 관리할 수 있습니다.
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                  <h3 className="text-lg md:text-xl font-bold text-white">SMART HTS</h3>
+                  <span className="text-xs bg-[#3a6aa0]/40 text-[#6aafff] px-2 py-0.5 rounded-full w-fit border border-[#3a6aa0]/40">데스크탑</span>
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                  PC에 직접 설치하여 고성능 차트, 기술 분석 도구, 멀티 화면 레이아웃을 경험하세요.
                 </p>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <motion.a
-                    href="https://smart-trade.kr/mts"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="button-access-mts"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3a6aa0] to-[#5a8ac0] text-white font-bold rounded-full px-8 py-4 text-base shadow-lg shadow-blue-500/25 cursor-pointer border border-white/20"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(58, 106, 160, 0.4)" }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    MTS 접속
-                  </motion.a>
+                <div className="flex flex-wrap gap-3 text-xs text-slate-400">
+                  {["Windows 지원", "멀티 차트", "실시간 시세", "원클릭 주문"].map(f => (
+                    <span key={f} className="flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#6aafff]" />{f}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <div className="flex-1 flex justify-center">
-                <img src={mobileImg} alt="Mobile App" className="max-w-[300px] rounded-3xl shadow-2xl border-4 border-slate-700" />
-              </div>
+              <motion.a
+                href="https://hts.jw-asset.kr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 inline-flex items-center gap-2 bg-gradient-to-r from-[#3a6aa0] to-[#5a8ac0] text-white font-bold rounded-xl px-6 py-3 text-sm shadow-lg shadow-blue-500/20 border border-white/10 whitespace-nowrap"
+                whileHover={{ scale: 1.04, boxShadow: "0 0 20px rgba(58,106,160,0.4)" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <Download className="w-4 h-4" />
+                HTS 다운로드
+              </motion.a>
             </div>
-          </TabsContent>
-        </Tabs>
+          </div>
+
+          {/* MTS 영역 */}
+          <div className="p-6 md:p-10">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="flex-shrink-0 w-14 h-14 bg-[#3a6aa0]/30 rounded-2xl flex items-center justify-center border border-[#3a6aa0]/40">
+                <Smartphone className="w-7 h-7 text-[#6aafff]" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                  <h3 className="text-lg md:text-xl font-bold text-white">SMART MTS</h3>
+                  <span className="text-xs bg-[#3a6aa0]/40 text-[#6aafff] px-2 py-0.5 rounded-full w-fit border border-[#3a6aa0]/40">모바일</span>
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                  이동 중에도 시장을 확인하고 주문을 관리하세요. 스마트폰으로 언제 어디서나 접속 가능합니다.
+                </p>
+                <div className="flex flex-wrap gap-3 text-xs text-slate-400">
+                  {["iOS / Android", "실시간 알림", "간편 주문", "포지션 관리"].map(f => (
+                    <span key={f} className="flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#6aafff]" />{f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <motion.a
+                href="https://jw-asset.kr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold rounded-xl px-6 py-3 text-sm border border-white/20 whitespace-nowrap"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <ExternalLink className="w-4 h-4" />
+                MTS 접속
+              </motion.a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
