@@ -28,16 +28,6 @@ export function Hero() {
       {/* 콘텐츠 */}
       <div className="container relative z-10 flex flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28">
 
-        {/* 배지 */}
-        <motion.span
-          className="inline-flex items-center rounded-full border border-[#3a6aa0] bg-white px-4 py-1.5 text-sm font-semibold text-[#3a6aa0]"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          해외선물 전문 플랫폼
-        </motion.span>
-
         {/* 제목 */}
         <motion.h1
           className="mt-5 break-keep text-4xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
