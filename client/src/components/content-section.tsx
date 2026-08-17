@@ -22,13 +22,13 @@ export function ContentSection({ title, highlight, description, image, reversed 
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 md:mb-6 break-keep">
               {title} <span className="text-[#3a6aa0] relative inline-block">
                 {highlight}
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-[#3a6aa0]/20 -z-10 transform skew-x-12"></span>
               </span>
             </h2>
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6 break-keep">
               {description}
             </p>
             
@@ -46,11 +46,15 @@ export function ContentSection({ title, highlight, description, image, reversed 
 
           <div className="w-full md:w-1/2">
             <motion.div
-              className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="relative overflow-hidden"
+              initial={{ opacity: 0, x: reversed ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              style={{
+                maskImage: "radial-gradient(ellipse 85% 80% at 50% 45%, black 40%, transparent 100%)",
+                WebkitMaskImage: "radial-gradient(ellipse 85% 80% at 50% 45%, black 40%, transparent 100%)",
+              }}
             >
               <img src={image} alt={title} className="w-full h-auto object-cover" />
             </motion.div>

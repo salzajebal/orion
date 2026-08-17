@@ -40,16 +40,16 @@ export function Hero() {
 
         {/* 제목 */}
         <motion.h1
-          className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mt-5 break-keep text-4xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
         >
-          JW에셋으로<br />해외선물을 거래하세요
+          JW에셋으로 해외선물을 거래하세요
         </motion.h1>
 
         <motion.p
-          className="mt-5 max-w-xl text-base leading-8 text-slate-500 sm:text-lg"
+          className="mt-5 max-w-xl break-keep text-base leading-8 text-slate-500 sm:text-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.15 }}

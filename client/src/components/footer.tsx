@@ -13,7 +13,7 @@ export function Footer() {
               alt="JW에셋"
               className="h-10 w-auto brightness-0 invert"
             />
-            <p className="mt-5 max-w-xs text-sm leading-7 text-slate-400">
+            <p className="mt-5 max-w-xs break-keep text-sm leading-7 text-slate-400">
               JW에셋은 글로벌 해외선물 시장에 특화된 전문 트레이딩 플랫폼입니다.
               빠른 체결과 정밀한 분석 환경으로 트레이더의 성과를 지원합니다.
             </p>
@@ -40,7 +40,7 @@ export function Footer() {
         {/* 하단 바 */}
         <div className="flex flex-col gap-2 pt-7 text-xs leading-6 text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© 2025 JW Assets Co., Ltd. All rights reserved.</p>
-          <p className="md:text-right">
+          <p className="break-keep md:text-right">
             해외선물 거래는 원금 손실의 위험이 있습니다. 투자 전 반드시 상품설명서를 확인하시기 바랍니다.
           </p>
         </div>

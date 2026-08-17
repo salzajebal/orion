@@ -95,23 +95,23 @@ export function Features() {
 
               {/* 수치 강조 */}
               <div className="relative z-10 mt-5 flex items-end gap-2.5">
-                <span className="text-5xl font-black text-slate-900 leading-none">{stat}</span>
-                <span className="mb-1 text-sm text-slate-400">{statLabel}</span>
+                <span className="text-4xl font-black text-slate-900 leading-none lg:text-5xl">{stat}</span>
+                <span className="mb-1 text-sm text-slate-400 break-keep">{statLabel}</span>
               </div>
 
               {/* 제목 */}
-              <h3 className="relative z-10 mt-4 text-xl font-bold text-slate-900">{title}</h3>
+              <h3 className="relative z-10 mt-4 text-xl font-bold text-slate-900 break-keep">{title}</h3>
 
               {/* 구분선 */}
               <div className="relative z-10 my-5 h-px w-full bg-slate-100 transition-colors group-hover:bg-[#3a6aa0]/20" />
 
               {/* 설명 */}
-              <p className="relative z-10 text-sm leading-7 text-slate-500 flex-1">{description}</p>
+              <p className="relative z-10 flex-1 break-keep text-sm leading-7 text-slate-500">{description}</p>
 
               {/* 포인트 리스트 */}
               <ul className="relative z-10 mt-6 space-y-2.5">
                 {points.map((p) => (
-                  <li key={p} className="flex items-center gap-2.5 text-sm text-slate-500">
+                  <li key={p} className="flex items-center gap-2.5 text-sm text-slate-500 break-keep">
                     <span className="h-2 w-2 shrink-0 rounded-full bg-[#3a6aa0]" />
                     {p}
                   </li>
