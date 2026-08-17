@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import symbolImg from "@assets/jw_symbol.png";
+import symbolImg from "@assets/jw_symbol_no_bg.png";
 
 const stats = [
   ["0.1초", "빠른 체결"],
