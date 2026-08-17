@@ -47,7 +47,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
         >
-          JW에셋으로 해외선물을 거래하세요
+          <span className="text-[#3a6aa0]">JW에셋</span>으로 해외선물을 거래하세요
         </motion.h1>
 
         <motion.p
