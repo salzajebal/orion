@@ -278,7 +278,7 @@ export function ContentSections() {
       <FeaturePanel
         number="01"
         title="기술 지표 대시보드"
-        description="RSI·MACD·볼린저밴드 등 80종 이상의 기술 지표를 한 화면에서 실시간으로 확인하세요. 과매수·과매도 신호를 즉시 포착해 더 정확한 진입 타이밍을 잡습니다."
+        description="RSI·MACD·볼린저밴드 등 80종 이상의 기술 지표를 한 화면에서 실시간으로 확인하세요. 과매수·과매도 신호를 즉시 포착해 더 정확한 진입 타이밍을 잡습니다"
         icon={LineChart}
       >
         <TechnicalIndicatorsMockup />
@@ -287,7 +287,7 @@ export function ContentSections() {
       <FeaturePanel
         number="02"
         title="호가창 · 시장 깊이"
-        description="매수·매도 잔량의 분포를 실시간으로 파악하세요. 대형 매물대와 지지 구간을 시각적으로 읽고, 전문 트레이더처럼 시장의 흐름을 앞서 포착합니다."
+        description="매수·매도 잔량의 분포를 실시간으로 파악하세요. 대형 매물대와 지지 구간을 시각적으로 읽고, 전문 트레이더처럼 시장의 흐름을 앞서 포착합니다"
         icon={Layers}
         reversed
         dark
@@ -298,7 +298,7 @@ export function ContentSections() {
       <FeaturePanel
         number="03"
         title="리스크 관리"
-        description="투자 원칙을 시스템에 담으세요. 포지션별 손절 라인과 증거금 현황을 실시간으로 관리해 예측 가능한 거래를 만듭니다."
+        description="투자 원칙을 시스템에 담으세요. 포지션별 손절 라인과 증거금 현황을 실시간으로 관리해 예측 가능한 거래를 만듭니다"
         icon={ShieldCheck}
       >
         <RiskMockup />

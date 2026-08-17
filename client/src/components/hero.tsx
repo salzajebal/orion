@@ -21,7 +21,7 @@ export function Hero() {
         {/* 2줄 제목 */}
         <h1 className="break-keep font-bold leading-tight tracking-tight">
           <span className="block text-3xl text-slate-900 sm:text-4xl md:text-5xl">
-            JW에셋으로 거래하는
+            JW에셋으로 시작하는
           </span>
           <span className="block text-3xl text-[#3a6aa0] sm:text-4xl md:text-5xl">
             새로운 안목
@@ -30,7 +30,7 @@ export function Hero() {
 
         {/* 서브타이틀 */}
         <p className="mt-4 max-w-xs break-keep text-sm leading-7 text-slate-500 sm:max-w-sm sm:text-base">
-          글로벌 금융 시장에서 앞서가는 JW에셋.<br />
+          글로벌 금융 시장에서 앞서가는 JW에셋<br />
           혁신적인 트레이딩 플랫폼으로 투자를 한 차원 높이십시오
         </p>
 

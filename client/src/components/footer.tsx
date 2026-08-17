@@ -45,7 +45,7 @@ export function Footer() {
         <div className="flex flex-col gap-1 pt-5 text-xs leading-6 text-slate-500 md:flex-row md:items-center md:justify-between">
           <p>© 2025 JW Assets Co., Ltd. All rights reserved.</p>
           <p className="break-keep md:text-right">
-            해외선물 거래는 원금 손실의 위험이 있습니다.
+            거래는 원금 손실의 위험이 있습니다
           </p>
         </div>
 

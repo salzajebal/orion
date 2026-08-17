@@ -1,10 +1,10 @@
 import { Activity, BarChart3, ShieldCheck, Zap } from "lucide-react";
 
 const metrics = [
-  { value: "+18.4%", label: "평균 수익률",   number: "01", icon: BarChart3,   color: "#3a6aa0", desc: "검증된 전략과 빠른 체결로 달성한 실제 계좌 기준 평균 수익률입니다." },
-  { value: "0.003s", label: "체결 속도",    number: "02", icon: Zap,          color: "#f59e0b", desc: "초저지연 인프라로 시장 변동에 0.003초 안에 대응합니다." },
-  { value: "24/5",   label: "시장 접근",    number: "03", icon: Activity,     color: "#3a6aa0", desc: "글로벌 주요 선물 시장 전체를 주 5일 24시간 실시간으로 연결합니다." },
-  { value: "99.9%",  label: "시스템 안정성", number: "04", icon: ShieldCheck,  color: "#10b981", desc: "이중화된 서버와 자동 페일오버로 서비스 중단 없는 거래 환경을 보장합니다." },
+  { value: "+18.4%", label: "평균 수익률",   number: "01", icon: BarChart3,   color: "#3a6aa0", desc: "검증된 전략과 빠른 체결로 달성한 실제 계좌 기준 평균 수익률" },
+  { value: "0.003s", label: "체결 속도",    number: "02", icon: Zap,          color: "#f59e0b", desc: "초저지연 인프라로 시장 변동에 0.003초 안에 대응" },
+  { value: "24/5",   label: "시장 접근",    number: "03", icon: Activity,     color: "#3a6aa0", desc: "글로벌 주요 선물 시장 전체를 주 5일 24시간 실시간으로 연결" },
+  { value: "99.9%",  label: "시스템 안정성", number: "04", icon: ShieldCheck,  color: "#10b981", desc: "이중화된 서버와 자동 페일오버로 서비스 중단 없는 거래 환경 보장" },
 ];
 
 export function Features() {
@@ -26,7 +26,7 @@ export function Features() {
               SYSTEM STATUS / ONLINE
             </div>
             <h2 className="text-5xl font-semibold leading-tight tracking-[-0.05em] text-slate-900 md:text-6xl">
-              글로벌 해외선물<br />
+              글로벌 금융 시장<br />
               <span className="text-[#3a6aa0]">프리미엄 서비스</span>
             </h2>
           </div>
