@@ -33,14 +33,12 @@ export function Navbar() {
         </div>
 
         {/* CTA 버튼 */}
-        <a
-          href="https://hts.jw-asset.kr"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => scrollTo("#platforms")}
           className="hidden rounded-lg bg-[#3a6aa0] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#315b8b] md:inline-flex items-center"
         >
-          HTS 다운로드
-        </a>
+          다운로드
+        </button>
 
         {/* 모바일 햄버거 — 간단 드롭다운 */}
         <details className="group relative md:hidden">
@@ -63,14 +61,12 @@ export function Navbar() {
               </button>
             ))}
             <div className="mx-3 my-2 border-t border-slate-100" />
-            <a
-              href="https://hts.jw-asset.kr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-4 py-2.5 text-sm font-bold text-[#3a6aa0] hover:bg-slate-50"
+            <button
+              onClick={() => { scrollTo("#platforms"); (document.activeElement as HTMLElement)?.blur(); }}
+              className="block w-full px-4 py-2.5 text-left text-sm font-bold text-[#3a6aa0] hover:bg-slate-50"
             >
-              HTS 다운로드 →
-            </a>
+              다운로드 →
+            </button>
           </div>
         </details>
       </div>

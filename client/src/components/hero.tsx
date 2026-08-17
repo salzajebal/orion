@@ -44,7 +44,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          빠른 체결과 선명한 분석 환경으로 글로벌 선물 시장을 더 자신 있게 만나보세요.
+          빠른 체결과 선명한 분석 환경으로 글로벌 시장을 더 자신 있게 만나보세요.
         </motion.p>
 
         {/* 통계 */}
