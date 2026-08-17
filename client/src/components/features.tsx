@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { Activity, BarChart2, Shield, Zap } from "lucide-react";
-
 const features = [
   {
-    Icon: Zap,
     num: "01",
     stat: "0.1초",
     statLabel: "평균 체결 속도",
@@ -13,7 +10,6 @@ const features = [
     points: ["저지연 전용 서버", "슬리피지 최소화", "실시간 호가 반영"],
   },
   {
-    Icon: BarChart2,
     num: "02",
     stat: "80+",
     statLabel: "기술 지표 제공",
@@ -23,7 +19,6 @@ const features = [
     points: ["멀티 타임프레임 차트", "DOM 시장 깊이 분석", "커스텀 지표 설정"],
   },
   {
-    Icon: Activity,
     num: "03",
     stat: "24/5",
     statLabel: "실시간 시세 제공",
@@ -33,7 +28,6 @@ const features = [
     points: ["CME·CBOT 직결", "경제 지표 캘린더", "다중 종목 동시 모니터링"],
   },
   {
-    Icon: Shield,
     num: "04",
     stat: "99.9%",
     statLabel: "서버 가동률",
@@ -86,7 +80,7 @@ export function Features() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {features.map(({ Icon, num, stat, statLabel, title, description, points }) => (
+          {features.map(({ num, stat, statLabel, title, description, points }) => (
             <motion.div
               key={num}
               variants={cardVariants}
@@ -99,35 +93,26 @@ export function Features() {
                 {num}
               </span>
 
-              {/* 아이콘 */}
-              <motion.div
-                className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0f7ff] transition-colors group-hover:bg-[#3a6aa0]"
-                whileHover={{ rotate: [0, -8, 8, 0] }}
-                transition={{ duration: 0.4 }}
-              >
-                <Icon className="h-6 w-6 text-[#3a6aa0] transition-colors group-hover:text-white" />
-              </motion.div>
-
               {/* 수치 강조 */}
-              <div className="relative z-10 mt-5 flex items-end gap-2">
-                <span className="text-3xl font-black text-slate-900 leading-none">{stat}</span>
-                <span className="mb-0.5 text-xs text-slate-400">{statLabel}</span>
+              <div className="relative z-10 mt-5 flex items-end gap-2.5">
+                <span className="text-5xl font-black text-slate-900 leading-none">{stat}</span>
+                <span className="mb-1 text-sm text-slate-400">{statLabel}</span>
               </div>
 
               {/* 제목 */}
-              <h3 className="relative z-10 mt-3 text-base font-bold text-slate-900">{title}</h3>
+              <h3 className="relative z-10 mt-4 text-xl font-bold text-slate-900">{title}</h3>
 
               {/* 구분선 */}
-              <div className="relative z-10 my-4 h-px w-full bg-slate-100 transition-colors group-hover:bg-[#3a6aa0]/20" />
+              <div className="relative z-10 my-5 h-px w-full bg-slate-100 transition-colors group-hover:bg-[#3a6aa0]/20" />
 
               {/* 설명 */}
-              <p className="relative z-10 text-sm leading-7 text-slate-500">{description}</p>
+              <p className="relative z-10 text-sm leading-7 text-slate-500 flex-1">{description}</p>
 
               {/* 포인트 리스트 */}
-              <ul className="relative z-10 mt-5 space-y-1.5">
+              <ul className="relative z-10 mt-6 space-y-2.5">
                 {points.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-xs text-slate-500">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#3a6aa0]" />
+                  <li key={p} className="flex items-center gap-2.5 text-sm text-slate-500">
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#3a6aa0]" />
                     {p}
                   </li>
                 ))}

@@ -62,17 +62,15 @@ export function Platforms() {
             </a>
           </motion.div>
 
-          {/* MTS + WTS */}
-          <div className="flex flex-col gap-4">
-
-            {/* MTS */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.08 }}
-              className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-6"
-            >
+          {/* MTS + WTS 통합 박스 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.08 }}
+            className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+          >
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f7ff]">
                   <Smartphone className="h-6 w-6 text-[#3a6aa0]" />
@@ -90,16 +88,11 @@ export function Platforms() {
               >
                 접속하기
               </a>
-            </motion.div>
+            </div>
 
-            {/* WTS */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.14 }}
-              className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-6"
-            >
+            <div className="h-px w-full bg-slate-100" />
+
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f7ff]">
                   <Globe2 className="h-6 w-6 text-[#3a6aa0]" />
@@ -117,9 +110,8 @@ export function Platforms() {
               >
                 접속하기
               </a>
-            </motion.div>
-
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
