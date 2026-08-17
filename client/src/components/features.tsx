@@ -1,10 +1,10 @@
 import { Activity, BarChart3, ShieldCheck, Zap } from "lucide-react";
 
 const metrics = [
-  { value: "+18.4%", label: "평균 수익률", number: "01", icon: BarChart3, color: "#3a6aa0" },
-  { value: "0.003s", label: "체결 속도",   number: "02", icon: Zap,        color: "#f59e0b" },
-  { value: "24/5",   label: "시장 접근",   number: "03", icon: Activity,   color: "#3a6aa0" },
-  { value: "99.9%",  label: "시스템 안정성", number: "04", icon: ShieldCheck, color: "#10b981" },
+  { value: "+18.4%", label: "평균 수익률",   number: "01", icon: BarChart3,   color: "#3a6aa0", desc: "검증된 전략과 빠른 체결로 달성한 실제 계좌 기준 평균 수익률입니다." },
+  { value: "0.003s", label: "체결 속도",    number: "02", icon: Zap,          color: "#f59e0b", desc: "초저지연 인프라로 시장 변동에 0.003초 안에 대응합니다." },
+  { value: "24/5",   label: "시장 접근",    number: "03", icon: Activity,     color: "#3a6aa0", desc: "글로벌 주요 선물 시장 전체를 주 5일 24시간 실시간으로 연결합니다." },
+  { value: "99.9%",  label: "시스템 안정성", number: "04", icon: ShieldCheck,  color: "#10b981", desc: "이중화된 서버와 자동 페일오버로 서비스 중단 없는 거래 환경을 보장합니다." },
 ];
 
 export function Features() {
@@ -38,17 +38,24 @@ export function Features() {
 
         {/* 지표 카드 4개 */}
         <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map(({ value, label, number, icon: Icon, color }) => (
+          {metrics.map(({ value, label, number, icon: Icon, color, desc }) => (
             <div
               key={number}
               className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              <div className="mb-14 flex items-center justify-between">
-                <Icon size={20} style={{ color }} />
+              {/* 상단: 아이콘 + 번호 */}
+              <div className="mb-5 flex items-center justify-between">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${color}15` }}>
+                  <Icon size={20} style={{ color }} />
+                </div>
                 <span className="font-mono text-[10px] text-slate-400">{number}</span>
               </div>
-              <div className="font-mono text-3xl font-bold text-slate-900">{value}</div>
-              <div className="mt-2 text-sm text-slate-500">{label}</div>
+              {/* 수치 */}
+              <div className="font-mono text-3xl font-bold tracking-tight text-slate-900">{value}</div>
+              <div className="mt-1.5 text-sm font-medium text-slate-600">{label}</div>
+              {/* 설명 */}
+              <p className="mt-3 text-xs leading-5 text-slate-400">{desc}</p>
+              {/* 하단 컬러 바 */}
               <div className="absolute bottom-0 left-0 h-0.5 w-1/2" style={{ background: color }} />
             </div>
           ))}
