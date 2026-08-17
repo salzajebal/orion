@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
@@ -5,16 +6,41 @@ import { ContentSection } from "@/components/content-section";
 import { Platforms } from "@/components/platforms";
 import { Footer } from "@/components/footer";
 
+const heroStats = [
+  ["0.1초", "빠른 체결"],
+  ["15개+", "거래 종목"],
+  ["24/5", "고객 지원"],
+  ["99.9%", "서버 안정성"],
+];
+
 import analysisToolsImg from "@assets/generated_images/desktop_trading_platform_screenshot.png";
 import automatedTradingImg from "@assets/generated_images/laptop_and_mobile_phone_displaying_professional_forex_trading_charts.png";
 import orderSystemImg from "@assets/generated_images/web_trading_platform_screenshot.png";
-import signalsImg from "@assets/generated_images/mobile_trading_app_screenshot.png";
+import signalsImg from "@assets/generated_images/hero_trading_platform_clean.png";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <Navbar />
       <Hero />
+
+      {/* 히어로 하단 stat 밴드 */}
+      <motion.div
+        className="border-y border-slate-200 bg-white"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <div className="container flex divide-x divide-slate-200 px-4 md:px-6">
+          {heroStats.map(([value, label]) => (
+            <div key={label} className="min-w-0 flex-1 py-5 text-center">
+              <p className="text-lg font-bold text-slate-900 sm:text-xl md:text-2xl">{value}</p>
+              <p className="mt-0.5 text-[10px] text-slate-400 sm:text-xs">{label}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
       <Features />
       <Platforms />
 

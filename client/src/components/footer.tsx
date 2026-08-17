@@ -12,7 +12,7 @@ export function Footer() {
           <img
             src={logoImg}
             alt="JW에셋"
-            className="h-7 w-auto brightness-0 invert"
+            className="h-6 w-auto max-w-[140px] object-contain brightness-0 invert"
           />
 
           {/* 플랫폼 + 고객지원 — 나란히 */}

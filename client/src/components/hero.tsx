@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import symbolImg from "@assets/jw_symbol_no_bg.png";
+import logoImg from "@assets/jw_logo.png";
 
 const stats = [
   ["0.1초", "빠른 체결"],
@@ -20,13 +21,24 @@ export function Hero() {
         <img
           src={symbolImg}
           alt=""
-          className="w-[420px] opacity-[0.08] sm:w-[520px] md:w-[640px] lg:w-[720px]"
+          className="w-[420px] opacity-[0.18] sm:w-[520px] md:w-[640px] lg:w-[720px]"
           draggable={false}
         />
       </div>
 
       {/* 콘텐츠 */}
       <div className="container relative z-10 flex flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-20 md:py-28">
+
+        {/* 로고 — 원래 색상 */}
+        <motion.img
+          src={logoImg}
+          alt="JW에셋"
+          className="mb-2 h-12 w-auto object-contain sm:h-14 md:h-16"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          draggable={false}
+        />
 
         {/* 제목 */}
         <motion.h1
@@ -46,21 +58,6 @@ export function Hero() {
         >
           빠른 체결과 선명한 분석 환경으로 글로벌 시장을 더 자신 있게 만나보세요.
         </motion.p>
-
-        {/* 통계 */}
-        <motion.div
-          className="mt-10 flex w-full max-w-lg divide-x divide-slate-200 border-y border-slate-200 py-4 md:mt-14"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {stats.map(([value, label]) => (
-            <div key={label} className="min-w-0 flex-1 px-2 text-center sm:px-4">
-              <p className="text-lg font-bold text-slate-900 sm:text-xl md:text-2xl">{value}</p>
-              <p className="mt-0.5 text-[10px] text-slate-500 sm:text-xs sm:mt-1">{label}</p>
-            </div>
-          ))}
-        </motion.div>
 
       </div>
     </section>
