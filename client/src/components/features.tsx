@@ -127,6 +127,37 @@ export function Features() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* 설치 링크 */}
+        <motion.div
+          className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-10 sm:flex-row"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
+          <p className="break-keep text-sm text-slate-400">
+            지금 바로 시작하세요 — HTS 설치 또는 웹으로 바로 접속
+          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://hts.jw-asset.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#3a6aa0] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#315b8b]"
+            >
+              HTS 다운로드
+            </a>
+            <a
+              href="https://jw-asset.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-bold text-slate-600 transition-colors hover:border-[#3a6aa0] hover:text-[#3a6aa0]"
+            >
+              MTS 접속하기
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
