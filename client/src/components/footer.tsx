@@ -2,20 +2,18 @@ import logoImg from "@assets/jw_logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0f172a] pt-16 pb-8 text-white">
+    <footer className="bg-[#0f172a] pt-10 pb-8 text-white">
       <div className="container px-4 md:px-6">
 
-        {/* 로고 + 링크 2열 */}
-        <div className="flex flex-col gap-6 border-b border-slate-800 pb-8 sm:flex-row sm:items-start sm:justify-between">
+        {/* 로고 */}
+        <img
+          src={logoImg}
+          alt="JW에셋"
+          className="mb-6 h-6 w-auto max-w-[140px] object-contain brightness-0 invert"
+        />
 
-          {/* 로고 */}
-          <img
-            src={logoImg}
-            alt="JW에셋"
-            className="h-6 w-auto max-w-[140px] object-contain brightness-0 invert"
-          />
-
-          {/* 플랫폼 + 고객지원 — 나란히 */}
+        {/* 링크 2열 + 구분선 */}
+        <div className="border-b border-slate-800 pb-8">
           <div className="grid grid-cols-2 gap-8 text-sm text-slate-400">
             <div>
               <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-slate-300">플랫폼</h3>
