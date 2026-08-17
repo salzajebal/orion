@@ -1,4 +1,5 @@
 import { UserPlus, Wallet, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -23,30 +24,18 @@ const steps = [
 
 export function Steps() {
   return (
-    <section className="py-24">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            3가지 간단한 과정과 <span className="text-[#3a6aa0] border-b-4 border-[#3a6aa0]/30">SMART에서</span> 거래 즐기기
-          </h2>
-        </div>
+    <section className="bg-gradient-to-r from-[#1e3a5f] to-[#2c5a8c] py-20 text-white md:py-28">
+      <div className="container px-4 md:px-6">
+        <div className="mb-12 text-center"><span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold tracking-widest text-[#dcecff]">시작하기</span><h2 className="mt-5 text-3xl font-bold md:text-5xl">간단한 3단계로<br /><span className="text-[#a8d2ff]">거래를 시작하세요</span></h2></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-200/60 -z-10" />
+        <div className="relative grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="absolute left-[16%] right-[16%] top-16 hidden h-px bg-white/30 md:block" />
 
           {steps.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-white/70 backdrop-blur-sm border-4 border-slate-200/60 rounded-full flex items-center justify-center mb-6 relative z-10 shadow-sm">
-                <item.icon className="w-10 h-10 text-[#3a6aa0]" />
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#2c5a8c] text-white rounded-full flex items-center justify-center font-bold text-sm">
-                  {item.step}
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
-              <p className="text-slate-500 max-w-xs">{item.description}</p>
-            </div>
+            <motion.div key={item.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .1 }} className="relative z-10 rounded-2xl border border-white/20 bg-white/10 p-7 backdrop-blur-sm md:p-8"><div className="flex items-center justify-between"><span className="text-5xl font-bold text-white/20">{item.step}</span><div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#2c5a8c]"><item.icon className="h-6 w-6" /></div></div><h3 className="mt-8 text-xl font-bold">{item.title}</h3><p className="mt-3 leading-7 text-slate-300">{item.description}</p></motion.div>
           ))}
         </div>
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"><p className="text-lg font-semibold">지금 바로 시작하세요</p><a href="https://hts.jw-asset.kr" target="_blank" rel="noopener noreferrer" className="rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#1e3a5f] hover:bg-[#e4f0fc]">HTS 다운로드</a></div>
       </div>
     </section>
   );

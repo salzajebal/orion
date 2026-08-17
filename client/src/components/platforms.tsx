@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, Smartphone, Download, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Monitor, Smartphone, Download, ExternalLink, CheckCircle2, Globe2 } from "lucide-react";
 
 export function Platforms() {
   return (
@@ -8,13 +8,13 @@ export function Platforms() {
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">SMART HTS / MTS</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">어디서든, 같은 거래 경험</h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
             데스크탑과 모바일, 모든 기기에서 해외선물을 거래하세요.
           </p>
         </div>
 
-        {/* 한 박스 안에 HTS + MTS */}
+        {/* 한 박스 안에 HTS + MTS + WTS */}
         <motion.div
           className="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,7 @@ export function Platforms() {
               </div>
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                  <h3 className="text-lg md:text-xl font-bold text-white">SMART HTS</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">JW에셋 HTS</h3>
                   <span className="text-xs bg-[#3a6aa0]/40 text-[#6aafff] px-2 py-0.5 rounded-full w-fit border border-[#3a6aa0]/40">데스크탑</span>
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
@@ -59,7 +59,8 @@ export function Platforms() {
             </div>
           </div>
 
-          {/* MTS 영역 */}
+          {/* MTS + WTS 영역 */}
+          <div className="grid divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0">
           <div className="p-6 md:p-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
               <div className="flex-shrink-0 w-14 h-14 bg-[#3a6aa0]/30 rounded-2xl flex items-center justify-center border border-[#3a6aa0]/40">
@@ -67,7 +68,7 @@ export function Platforms() {
               </div>
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                  <h3 className="text-lg md:text-xl font-bold text-white">SMART MTS</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-white">JW에셋 MTS</h3>
                   <span className="text-xs bg-[#3a6aa0]/40 text-[#6aafff] px-2 py-0.5 rounded-full w-fit border border-[#3a6aa0]/40">모바일</span>
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
@@ -94,6 +95,13 @@ export function Platforms() {
                 MTS 접속
               </motion.a>
             </div>
+          </div>
+          <div className="p-6 md:p-10">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-start gap-5"><div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#3a6aa0]/40 bg-[#3a6aa0]/30"><Globe2 className="h-7 w-7 text-[#6aafff]" /></div><div><div className="mb-2 flex items-center gap-2"><h3 className="text-lg font-bold text-white">JW에셋 WTS</h3><span className="rounded-full border border-[#3a6aa0]/40 bg-[#3a6aa0]/40 px-2 py-0.5 text-xs text-[#6aafff]">웹</span></div><p className="mb-4 text-sm leading-relaxed text-slate-300">설치 없이 브라우저에서 바로 접속해, 어디서나 동일한 거래 기능을 이용하세요.</p><div className="grid grid-cols-2 gap-2 text-xs text-slate-400">{["설치 불필요", "브라우저 지원", "동일 기능", "어디서나 접속"].map(f => <span key={f} className="flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-[#6aafff]" />{f}</span>)}</div></div></div>
+              <a href="https://jw-asset.kr/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold text-white hover:bg-white/15"><ExternalLink className="h-4 w-4" /> WTS 접속</a>
+            </div>
+          </div>
           </div>
         </motion.div>
       </div>

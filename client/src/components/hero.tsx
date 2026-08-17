@@ -1,87 +1,80 @@
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/hero_trading_platform_clean.png";
 import { Button } from "@/components/ui/button";
-import { Download, Smartphone } from "lucide-react";
+import { ArrowUpRight, Download, Gauge, ShieldCheck, Smartphone, Trophy, Wifi } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="container py-12 px-4 md:py-32 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-        <div className="w-full md:w-1/2 space-y-6 md:space-y-8 z-10">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0f2744] to-[#1e3a5f] text-white">
+      <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#3a6aa0]/30 blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-[#6aafff]/10 blur-3xl" />
+      <div className="container relative z-10 flex flex-col items-center gap-14 px-4 py-20 md:flex-row md:gap-12 md:px-6 md:py-28">
+        <div className="z-10 w-full space-y-7 md:w-[52%]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight text-slate-800">
-              SMART
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#6aafff]/30 bg-[#3a6aa0]/30 px-4 py-2 text-sm font-semibold text-[#dcecff]">
+              <Trophy className="h-4 w-4 text-[#8fc4ff]" /> 국내 1위 해외선물 전문 플랫폼
+            </div>
+            <h1 className="text-4xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-7xl">
+              해외선물 거래의<br /><span className="text-[#9fceff]">새로운 기준</span>
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light mt-3 md:mt-4 text-slate-600">
-              해외선물 거래의 새로운 기준
+            <h2 className="mt-5 text-xl font-medium text-slate-200 sm:text-2xl">
+              JW에셋과 함께 글로벌 선물 시장을 정복하세요
             </h2>
-            <p className="text-slate-500 mt-4 md:mt-6 max-w-lg text-base md:text-lg">
-              고급 차트, 빠른 체결, 다양한 분석 도구를 제공하는 해외선물 전문 거래 플랫폼 SMART를 경험하세요.
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
+              정밀한 분석 도구와 빠른 체결 인프라를 한 곳에 담았습니다. 매 순간의 시장 기회를 더 선명하게 확인하고 자신 있게 실행하세요.
             </p>
 
-            <motion.div 
-              className="mt-6 md:mt-8 bg-white/60 backdrop-blur-sm border border-slate-200/80 rounded-xl p-4 md:p-6 max-w-md shadow-lg"
+            <motion.div
+              className="mt-8 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-2xl"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <p className="text-2xl md:text-3xl font-bold text-[#3a6aa0]">0.1초</p>
-                  <p className="text-xs md:text-sm text-slate-500 mt-1">빠른 체결 속도</p>
+              {[
+                { value: "0.1초", label: "체결속도", icon: Gauge },
+                { value: "15개+", label: "거래종목", icon: ArrowUpRight },
+                { value: "24/5", label: "고객지원", icon: Wifi },
+                { value: "99.9%", label: "서버안정성", icon: ShieldCheck },
+              ].map(({ value, label, icon: Icon }) => (
+                <div key={label} className="bg-[#173657]/70 p-4 md:p-5">
+                  <Icon className="mb-3 h-4 w-4 text-[#8fc4ff]" />
+                  <p className="text-2xl font-bold text-white md:text-3xl">{value}</p>
+                  <p className="mt-1 text-xs text-slate-400">{label}</p>
                 </div>
-                <div>
-                  <p className="text-2xl md:text-3xl font-bold text-[#3a6aa0]">24/5</p>
-                  <p className="text-xs md:text-sm text-slate-500 mt-1">실시간 고객 지원</p>
-                </div>
-              </div>
+              ))}
             </motion.div>
           </motion.div>
 
-          <motion.div 
-            className="flex flex-wrap gap-4"
+          <motion.div className="flex flex-wrap gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <Button 
-                className="bg-gradient-to-r from-[#2c5a8c] to-[#3a6aa0] text-white hover:from-[#1e4a7a] hover:to-[#2c5a8c] rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg shadow-blue-500/20"
-                onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <Download className="w-5 h-5" />
-                SMART HTS 다운로드
-              </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <Button 
-                className="bg-white/80 backdrop-blur-sm text-slate-700 hover:bg-white rounded-full px-6 py-5 md:px-8 md:py-6 text-sm md:text-base font-bold flex items-center gap-2 w-full sm:w-auto justify-center shadow-lg border border-slate-200"
-                onClick={() => window.open("https://jw-asset.kr/", "_blank")}
-              >
-                <Smartphone className="w-5 h-5" />
-                SMART MTS 접속하기
-              </Button>
-            </motion.div>
+            <Button asChild className="h-14 rounded-xl bg-[#3a6aa0] px-6 text-sm font-bold text-white shadow-xl shadow-[#091d35]/40 hover:bg-[#4b7db5]">
+              <a href="https://hts.jw-asset.kr" target="_blank" rel="noopener noreferrer"><Download className="mr-2 h-5 w-5" /> HTS 다운로드</a>
+            </Button>
+            <Button asChild variant="outline" className="h-14 rounded-xl border-white/30 bg-white/5 px-6 text-sm font-bold text-white hover:bg-white/15 hover:text-white">
+              <a href="https://jw-asset.kr/" target="_blank" rel="noopener noreferrer"><Smartphone className="mr-2 h-5 w-5" /> MTS 접속</a>
+            </Button>
           </motion.div>
         </div>
 
-        <div className="w-full md:w-1/2 relative z-10">
+        <div className="relative z-10 w-full md:w-[48%]">
+          <div className="absolute -left-5 top-10 z-20 rounded-xl border border-white/20 bg-[#244b73]/90 px-4 py-3 text-sm shadow-2xl backdrop-blur-md">
+            <span className="block text-xs text-slate-300">나스닥</span><strong className="text-[#8fd1a6]">+2.1%</strong>
+          </div>
+          <div className="absolute -right-3 bottom-12 z-20 rounded-xl border border-white/20 bg-[#244b73]/90 px-4 py-3 text-sm shadow-2xl backdrop-blur-md">
+            <span className="block text-xs text-slate-300">금 선물</span><strong className="text-[#8fd1a6]">+0.8%</strong>
+          </div>
+          <div className="absolute inset-4 rounded-3xl bg-[#6aafff]/20 blur-3xl" />
           <motion.img
             src={heroImage}
-            alt="SMART Platform"
-            className="w-full h-auto drop-shadow-2xl rounded-lg"
+            alt="JW에셋 Platform"
+            className="relative w-full rounded-2xl border border-white/20 shadow-2xl shadow-black/30"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}

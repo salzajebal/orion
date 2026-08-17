@@ -25,7 +25,7 @@ export default function Home() {
         <ContentSection 
           title="다양한" 
           highlight="분석 도구들"
-          description="SMART를 사용하면 다양한 시간대의 차트와 80개 이상의 기술 지표 및 분석 도구를 활용할 수 있습니다. 실시간 해외선물 시세와 경제 일정 등 기본 분석 도구에도 액세스할 수 있습니다."
+          description="JW에셋을 사용하면 다양한 시간대의 차트와 80개 이상의 기술 지표 및 분석 도구를 활용할 수 있습니다. 실시간 해외선물 시세와 경제 일정 등 기본 분석 도구에도 액세스할 수 있습니다."
           image={analysisToolsImg}
         />
         
@@ -55,7 +55,7 @@ export default function Home() {
         <ContentSection 
           title="경험이 풍부한" 
           highlight="거래자로부터 거래 신호 수신"
-          description="SMART에서 경험이 풍부한 해외선물 트레이더의 거래 전략을 참고하고, 실시간 거래 신호를 활용하여 보다 효과적인 투자 판단을 내릴 수 있습니다."
+          description="JW에셋에서 경험이 풍부한 해외선물 트레이더의 거래 전략을 참고하고, 실시간 거래 신호를 활용하여 보다 효과적인 투자 판단을 내릴 수 있습니다."
           image={signalsImg}
           reversed={true}
         />
