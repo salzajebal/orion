@@ -1,9 +1,9 @@
 import logoImg from "@assets/jw_logo.png";
 
 const navLinks = [
-  { label: "주요 특징", href: "#features" },
-  { label: "거래 종목", href: "#markets" },
-  { label: "플랫폼 다운로드", href: "#platforms" },
+  { label: "SYSTEM",   href: "#features" },
+  { label: "FEATURES", href: "#detail" },
+  { label: "PLATFORM", href: "#platforms" },
 ];
 
 function scrollTo(id: string) {

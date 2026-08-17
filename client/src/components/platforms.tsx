@@ -1,75 +1,51 @@
-import { motion } from "framer-motion";
-import { Download, Globe2 } from "lucide-react";
+import { ArrowUpRight, Download, Terminal } from "lucide-react";
 
 export function Platforms() {
   return (
-    <section id="platforms" className="bg-white py-20 md:py-28">
-      <div className="container flex flex-col items-center px-4 md:px-6">
+    <section
+      id="platforms"
+      className="relative min-h-[620px] overflow-hidden bg-[#eef4fb] px-6 py-32 text-center"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(58,106,160,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(58,106,160,0.07) 1px, transparent 1px)",
+        backgroundSize: "48px 48px",
+      }}
+    >
+      <div className="relative mx-auto max-w-3xl">
+        <Terminal className="mx-auto mb-8 text-[#3a6aa0]" size={30} />
 
-        {/* 아이콘 */}
-        <motion.div
-          className="mb-7 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
-          <Globe2 className="h-8 w-8 text-[#3a6aa0]" />
-        </motion.div>
+        <div className="font-mono text-xs tracking-[0.35em] text-[#3a6aa0]">
+          DOWNLOAD PLATFORM
+        </div>
 
-        {/* 제목 */}
-        <motion.h2
-          className="break-keep text-center text-3xl font-bold text-slate-900 md:text-4xl"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-        >
-          트레이딩 플랫폼 바로가기
-        </motion.h2>
+        <h2 className="mt-7 text-5xl font-semibold tracking-[-0.05em] text-slate-900 md:text-6xl">
+          시장의 문을<br />
+          <span className="text-[#3a6aa0]">여는 가장 빠른 방법</span>
+        </h2>
 
-        {/* 설명 */}
-        <motion.p
-          className="mt-3 break-keep text-center text-base text-slate-400"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
-          데스크탑·모바일·웹 어디서든 JW에셋과 함께 실시간 투자를 경험하세요
-        </motion.p>
+        <p className="mx-auto mt-7 max-w-md text-sm leading-7 text-slate-500">
+          언제 어디서나 같은 데이터, 같은 속도.<br />
+          JW에셋의 트레이딩 환경을 시작하십시오.
+        </p>
 
-        {/* 버튼 */}
-        <motion.div
-          className="mt-10 flex w-full max-w-sm flex-col gap-3"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-        >
-          {/* HTS 다운로드 — outline */}
+        <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
           <a
             href="https://hts.jw-asset.kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-6 py-4 text-base font-bold text-slate-700 transition-colors hover:border-[#3a6aa0] hover:text-[#3a6aa0]"
+            className="flex items-center justify-center gap-3 rounded-xl bg-[#2c5a8c] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#3a6aa0]"
           >
-            <Download className="h-5 w-5" />
-            HTS 다운로드
+            <Download size={17} /> HTS 다운로드 <ArrowUpRight size={15} />
           </a>
-
-          {/* MTS & WTS — filled */}
           <a
             href="https://jw-asset.kr/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3a6aa0] px-6 py-4 text-base font-bold text-white transition-colors hover:bg-[#315b8b]"
+            className="flex items-center justify-center gap-3 rounded-xl border border-[#3a6aa0]/50 px-8 py-4 text-sm text-[#3a6aa0] transition hover:bg-blue-50"
           >
-            <Globe2 className="h-5 w-5" />
-            MTS &amp; WTS 바로가기
+            <Download size={17} /> MTS &amp; WTS <ArrowUpRight size={15} />
           </a>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
