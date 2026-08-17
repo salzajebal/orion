@@ -1,100 +1,202 @@
-import { Activity, ArrowUpRight, Check, ChevronRight, LineChart, ShieldCheck, CalendarDays } from "lucide-react";
+import { Activity, ArrowUpRight, Check, ChevronRight, LineChart, ShieldCheck, Layers } from "lucide-react";
 
-/* ── 차트 목업 ─────────────────────────────────────────── */
-const bars = [36,54,45,72,60,82,58,91,73,98,77,88,69,83,103,94,115,100,126,111,137,121,151,132];
+/* ── 기술 지표 대시보드 목업 ───────────────────────────── */
+const rsiPoints   = [44,48,52,49,55,61,58,63,67,65,68];
+const macdHist    = [-3,-2,0,1,2,4,3,5,6,5,7];
+const bbPoints    = [48,52,50,55,58,54,60,57,62,59,64];
 
-function ChartMockup() {
+function Sparkline({ points, color, height = 32 }: { points: number[]; color: string; height?: number }) {
+  const min = Math.min(...points), max = Math.max(...points);
+  const w = 100 / (points.length - 1);
+  const toY = (v: number) => height - ((v - min) / (max - min)) * height;
+  const d = points.map((p, i) => `${i === 0 ? "M" : "L"} ${i * w} ${toY(p)}`).join(" ");
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <div className="mb-4 flex items-center justify-between border-b border-slate-200 pb-3 font-mono text-[10px] text-slate-500">
-        <span className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-[#3a6aa0]" /> GOLD JUN26
-        </span>
-        <span className="text-emerald-500">+1.84%</span>
-      </div>
-      <div className="relative h-52">
-        <div className="absolute inset-0 flex flex-col justify-between opacity-20">
-          {[1,2,3,4,5].map(l => <div key={l} className="border-t border-blue-200" />)}
+    <svg viewBox={`0 0 100 ${height}`} className="w-full" preserveAspectRatio="none" style={{ height }}>
+      <path d={d} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IndicatorBadge({ signal }: { signal: "과매수" | "과매도" | "중립" | "상승 신호" | "하락 신호" }) {
+  const map = {
+    "과매수":   "bg-amber-50 text-amber-600",
+    "과매도":   "bg-red-50 text-red-500",
+    "중립":     "bg-slate-100 text-slate-500",
+    "상승 신호":"bg-emerald-50 text-emerald-600",
+    "하락 신호":"bg-red-50 text-red-500",
+  };
+  return <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold ${map[signal]}`}>{signal}</span>;
+}
+
+function TechnicalIndicatorsMockup() {
+  return (
+    <div className="space-y-3">
+      {/* 헤더 */}
+      <div className="flex items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+        <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest text-slate-500">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-[#3a6aa0]" />
+          GOLD JUN26 · INDICATOR PANEL
         </div>
-        <div className="absolute inset-0 flex items-end gap-1 px-1">
-          {bars.map((h, i) => (
-            <div key={i} className="relative flex-1">
-              <div
-                className={`mx-auto w-[3px] rounded-full ${i % 4 === 0 ? "bg-red-400/70" : "bg-[#3a6aa0]/70"}`}
-                style={{ height: `${h}%` }}
-              />
+        <span className="font-mono text-[11px] font-semibold text-[#3a6aa0]">2,348.70</span>
+      </div>
+
+      {/* RSI */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="mb-3 flex items-center justify-between">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-slate-400">RSI (14)</div>
+            <div className="mt-0.5 font-mono text-2xl font-bold text-slate-900">68.4</div>
+          </div>
+          <IndicatorBadge signal="과매수" />
+        </div>
+        <Sparkline points={rsiPoints} color="#f59e0b" />
+        <div className="mt-2 flex justify-between font-mono text-[9px] text-slate-400">
+          <span>과매도 &lt;30</span><span>중립</span><span>과매수 &gt;70</span>
+        </div>
+        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-slate-100">
+          <div className="h-full rounded-full bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400" style={{ width: "68.4%" }} />
+        </div>
+      </div>
+
+      {/* MACD */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="mb-3 flex items-center justify-between">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-slate-400">MACD (12,26,9)</div>
+            <div className="mt-0.5 flex items-baseline gap-2">
+              <span className="font-mono text-2xl font-bold text-slate-900">+0.42</span>
+              <span className="font-mono text-xs text-slate-400">Signal +0.28</span>
             </div>
+          </div>
+          <IndicatorBadge signal="상승 신호" />
+        </div>
+        {/* 히스토그램 미니바 */}
+        <div className="flex h-8 items-end gap-0.5">
+          {macdHist.map((v, i) => (
+            <div key={i} className="flex-1 rounded-sm" style={{ height: `${Math.abs(v) * 11}%`, background: v >= 0 ? "#10b981" : "#ef4444", opacity: 0.75 }} />
           ))}
         </div>
-        <div className="absolute left-0 right-0 top-[38%] border-t border-dashed border-[#3a6aa0]/50">
-          <span className="absolute -top-3 right-0 bg-[#3a6aa0] px-1.5 py-0.5 font-mono text-[9px] text-white">
-            2,348.70
-          </span>
+        <div className="mt-2 grid grid-cols-3 gap-2 font-mono text-[10px]">
+          <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-400">MACD</span><span className="text-emerald-600">+0.42</span></div>
+          <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-400">Signal</span><span className="text-slate-700">+0.28</span></div>
+          <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-400">Hist</span><span className="text-emerald-600">+0.14</span></div>
         </div>
       </div>
-      <div className="mt-4 grid grid-cols-3 gap-2 font-mono text-[10px]">
-        <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-500">OPEN</span><span className="text-slate-700">2,326.40</span></div>
-        <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-500">HIGH</span><span className="text-[#3a6aa0]">2,364.10</span></div>
-        <div className="rounded-lg bg-slate-50 p-2"><span className="block text-slate-500">VOL</span><span className="text-slate-700">48.2K</span></div>
+
+      {/* 볼린저 밴드 */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="mb-3 flex items-center justify-between">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Bollinger Bands (20,2)</div>
+            <div className="mt-0.5 font-mono text-2xl font-bold text-slate-900">중간 밴드</div>
+          </div>
+          <IndicatorBadge signal="중립" />
+        </div>
+        <Sparkline points={bbPoints} color="#3a6aa0" height={28} />
+        <div className="mt-3 grid grid-cols-3 gap-2 font-mono text-[10px]">
+          <div className="rounded-lg bg-red-50 p-2 text-center"><span className="block text-slate-400">상단</span><span className="text-red-400">2,394.20</span></div>
+          <div className="rounded-lg bg-blue-50 p-2 text-center"><span className="block text-slate-400">중간</span><span className="text-[#3a6aa0]">2,348.70</span></div>
+          <div className="rounded-lg bg-emerald-50 p-2 text-center"><span className="block text-slate-400">하단</span><span className="text-emerald-600">2,303.20</span></div>
+        </div>
       </div>
     </div>
   );
 }
 
-/* ── 경제 지표 캘린더 목업 ─────────────────────────────── */
-const calendarEvents = [
-  { date: "AUG 19", time: "22:00", name: "FOMC 회의록",          impact: "HIGH",   actual: "—",      prev: "5.25%",  currency: "USD" },
-  { date: "AUG 20", time: "21:30", name: "CPI (소비자물가지수)",  impact: "HIGH",   actual: "—",      prev: "+3.2%",  currency: "USD" },
-  { date: "AUG 21", time: "21:30", name: "신규 실업수당 청구건수", impact: "MED",    actual: "—",      prev: "232K",   currency: "USD" },
-  { date: "AUG 22", time: "23:00", name: "GDP 성장률 (예비치)",   impact: "HIGH",   actual: "—",      prev: "+2.1%",  currency: "USD" },
-  { date: "AUG 23", time: "03:00", name: "미시건 소비심리지수",   impact: "MED",    actual: "—",      prev: "71.6",   currency: "USD" },
+/* ── 오더북 (DOM) 목업 ─────────────────────────────────── */
+const asks = [
+  { price: "2,352.40", size: "18", depth: 22 },
+  { price: "2,351.80", size: "34", depth: 41 },
+  { price: "2,351.20", size: "27", depth: 33 },
+  { price: "2,350.60", size: "52", depth: 63 },
+  { price: "2,350.00", size: "71", depth: 86 },
+];
+const bids = [
+  { price: "2,349.40", size: "84", depth: 100 },
+  { price: "2,348.80", size: "63", depth: 75 },
+  { price: "2,348.20", size: "41", depth: 49 },
+  { price: "2,347.60", size: "29", depth: 35 },
+  { price: "2,347.00", size: "15", depth: 18 },
 ];
 
-const impactConfig: Record<string, { label: string; bg: string; text: string }> = {
-  HIGH: { label: "HIGH", bg: "bg-red-50",    text: "text-red-500"    },
-  MED:  { label: "MED",  bg: "bg-amber-50",  text: "text-amber-500"  },
-  LOW:  { label: "LOW",  bg: "bg-slate-100", text: "text-slate-400"  },
-};
-
-function EconomicCalendarMockup() {
+function OrderBookMockup() {
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       {/* 헤더 */}
-      <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between border-b border-slate-100 px-5 py-3.5">
+        <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest text-slate-500">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[#3a6aa0]" />
-          <span className="font-mono text-[11px] tracking-widest text-slate-500">ECONOMIC CALENDAR</span>
+          GOLD JUN26 · ORDER BOOK
         </div>
-        <span className="rounded-full bg-blue-50 px-2.5 py-1 font-mono text-[10px] text-[#3a6aa0]">KST 기준</span>
+        <div className="flex items-center gap-3 font-mono text-[10px]">
+          <span className="text-red-400">매도</span>
+          <span className="text-slate-300">/</span>
+          <span className="text-[#3a6aa0]">매수</span>
+        </div>
       </div>
+
       {/* 컬럼 헤더 */}
-      <div className="grid grid-cols-[72px_60px_1fr_56px] gap-2 border-b border-slate-100 px-5 py-2.5 font-mono text-[9px] uppercase tracking-widest text-slate-400">
-        <span>날짜</span><span>시간</span><span>지표</span><span className="text-right">영향도</span>
+      <div className="grid grid-cols-[1fr_52px_52px] border-b border-slate-100 px-5 py-2 font-mono text-[9px] uppercase tracking-widest text-slate-400">
+        <span>잔량 깊이</span>
+        <span className="text-center">잔량</span>
+        <span className="text-right">가격</span>
       </div>
-      {/* 이벤트 행 */}
-      {calendarEvents.map((ev, i) => {
-        const cfg = impactConfig[ev.impact];
-        return (
-          <div
-            key={i}
-            className={`grid grid-cols-[72px_60px_1fr_56px] items-center gap-2 px-5 py-3.5 font-mono text-xs transition-colors hover:bg-slate-50 ${i < calendarEvents.length - 1 ? "border-b border-slate-100" : ""}`}
-          >
-            <span className="text-[11px] font-semibold text-slate-400">{ev.date}</span>
-            <span className="text-[11px] text-slate-400">{ev.time}</span>
-            <div>
-              <div className="text-[12px] font-medium text-slate-800 leading-tight">{ev.name}</div>
-              <div className="mt-0.5 text-[10px] text-slate-400">이전: {ev.prev}</div>
-            </div>
-            <span className={`justify-self-end rounded-md px-2 py-0.5 text-[10px] font-bold ${cfg.bg} ${cfg.text}`}>
-              {cfg.label}
-            </span>
+
+      {/* 매도 호가 (ASK) — 위쪽, 낮은 가격이 아래 */}
+      {[...asks].reverse().map((row, i) => (
+        <div key={`ask-${i}`} className="relative grid grid-cols-[1fr_52px_52px] items-center px-5 py-2">
+          <div className="relative h-5 overflow-hidden rounded-sm">
+            <div
+              className="absolute right-0 top-0 h-full rounded-sm bg-red-50"
+              style={{ width: `${row.depth}%` }}
+            />
+            <div
+              className="absolute right-0 top-0 h-full rounded-sm bg-red-200/60"
+              style={{ width: `${row.depth * 0.35}%` }}
+            />
           </div>
-        );
-      })}
-      {/* 푸터 */}
-      <div className="flex items-center justify-between border-t border-slate-100 px-5 py-3 text-[10px] text-slate-400">
-        <span>다음 발표까지 <span className="font-semibold text-[#3a6aa0]">02:14:38</span></span>
-        <span className="font-mono tracking-wider">LIVE SYNC ON</span>
+          <span className="text-center font-mono text-[11px] text-slate-500">{row.size}</span>
+          <span className="text-right font-mono text-[12px] font-semibold text-red-500">{row.price}</span>
+        </div>
+      ))}
+
+      {/* 스프레드 */}
+      <div className="flex items-center justify-center gap-3 border-y border-slate-100 bg-slate-50 py-2.5 font-mono text-[10px]">
+        <span className="text-slate-400">SPREAD</span>
+        <span className="font-bold text-[#3a6aa0]">0.60</span>
+        <span className="text-slate-300">|</span>
+        <span className="text-slate-400">현재가</span>
+        <span className="font-bold text-slate-800">2,349.70</span>
+      </div>
+
+      {/* 매수 호가 (BID) — 아래쪽 */}
+      {bids.map((row, i) => (
+        <div key={`bid-${i}`} className="relative grid grid-cols-[1fr_52px_52px] items-center px-5 py-2">
+          <div className="relative h-5 overflow-hidden rounded-sm">
+            <div
+              className="absolute right-0 top-0 h-full rounded-sm bg-blue-50"
+              style={{ width: `${row.depth}%` }}
+            />
+            <div
+              className="absolute right-0 top-0 h-full rounded-sm bg-blue-200/60"
+              style={{ width: `${row.depth * 0.35}%` }}
+            />
+          </div>
+          <span className="text-center font-mono text-[11px] text-slate-500">{row.size}</span>
+          <span className="text-right font-mono text-[12px] font-semibold text-[#3a6aa0]">{row.price}</span>
+        </div>
+      ))}
+
+      {/* 푸터 — 매수/매도 비중 */}
+      <div className="border-t border-slate-100 px-5 py-3">
+        <div className="mb-1.5 flex justify-between font-mono text-[10px] text-slate-400">
+          <span className="text-[#3a6aa0]">매수 54.2%</span>
+          <span className="text-red-400">매도 45.8%</span>
+        </div>
+        <div className="flex h-1.5 overflow-hidden rounded-full">
+          <div className="h-full bg-[#3a6aa0]" style={{ width: "54.2%" }} />
+          <div className="h-full bg-red-400" style={{ width: "45.8%" }} />
+        </div>
       </div>
     </div>
   );
@@ -175,22 +277,22 @@ export function ContentSections() {
     <section id="detail">
       <FeaturePanel
         number="01"
-        title="기술적 분석"
-        description="정교한 차트와 실시간 시장 데이터. 필요한 신호만 선명하게, 수많은 기회를 한 화면에서 읽어냅니다."
+        title="기술 지표 대시보드"
+        description="RSI·MACD·볼린저밴드 등 80종 이상의 기술 지표를 한 화면에서 실시간으로 확인하세요. 과매수·과매도 신호를 즉시 포착해 더 정확한 진입 타이밍을 잡습니다."
         icon={LineChart}
       >
-        <ChartMockup />
+        <TechnicalIndicatorsMockup />
       </FeaturePanel>
 
       <FeaturePanel
         number="02"
-        title="경제 지표 캘린더"
-        description="FOMC·CPI·GDP 등 시장을 움직이는 핵심 경제 지표를 한눈에 파악하세요. 발표 전 미리 대비하고, 정보 우위로 더 나은 진입 타이밍을 잡습니다."
-        icon={CalendarDays}
+        title="호가창 · 시장 깊이"
+        description="매수·매도 잔량의 분포를 실시간으로 파악하세요. 대형 매물대와 지지 구간을 시각적으로 읽고, 전문 트레이더처럼 시장의 흐름을 앞서 포착합니다."
+        icon={Layers}
         reversed
         dark
       >
-        <EconomicCalendarMockup />
+        <OrderBookMockup />
       </FeaturePanel>
 
       <FeaturePanel
