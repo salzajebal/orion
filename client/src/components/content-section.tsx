@@ -12,9 +12,9 @@ interface ContentSectionProps {
 
 export function ContentSection({ title, highlight, description, image, reversed = false, listItems }: ContentSectionProps) {
   return (
-    <section className={`overflow-hidden py-20 md:py-28 ${reversed ? "bg-[#f8fafc]" : "bg-white"}`}>
+    <section className={`overflow-hidden py-14 md:py-20 lg:py-28 ${reversed ? "bg-[#f8fafc]" : "bg-white"}`}>
       <div className="container">
-        <div className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16`}>
+        <div className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-16`}>
           <motion.div 
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: reversed ? 50 : -50 }}
@@ -22,13 +22,13 @@ export function ContentSection({ title, highlight, description, image, reversed 
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 md:mb-6">
               {title} <span className="text-[#3a6aa0] relative inline-block">
                 {highlight}
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-[#3a6aa0]/20 -z-10 transform skew-x-12"></span>
               </span>
             </h2>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
               {description}
             </p>
             

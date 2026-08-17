@@ -15,53 +15,51 @@ import signalsImg from "@assets/generated_images/mobile_trading_app_screenshot.p
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans">
-      <div>
-        <Navbar />
-        <Hero />
-        <Features />
-        
-        <ContentSection 
-          title="다양한" 
-          highlight="분석 도구들"
-          description="JW에셋을 사용하면 다양한 시간대의 차트와 80개 이상의 기술 지표 및 분석 도구를 활용할 수 있습니다. 실시간 해외선물 시세와 경제 일정 등 기본 분석 도구에도 액세스할 수 있습니다."
-          image={analysisToolsImg}
-        />
-        
-        <ContentSection 
-          title="체계적인" 
-          highlight="자동화된 거래"
-          description="자동 매매 시스템을 활용하여 해외선물 거래를 자동화할 수 있습니다. 사전 설정된 조건에 따라 자동으로 주문을 실행하고, 거래 성과를 분석할 수 있습니다."
-          image={automatedTradingImg}
-          reversed={true}
-        />
+      <Navbar />
+      <Hero />
+      <Features />
 
-        <Steps />
+      <ContentSection
+        title="전문가 수준의"
+        highlight="기술적 분석 환경"
+        description="80종 이상의 기술 지표, 복수 타임프레임 차트, 시장 깊이(DOM) 패널을 하나의 화면에서 운용합니다. 실시간 해외선물 시세와 경제 지표 캘린더를 통해 근거 있는 매매 판단을 내리세요."
+        image={analysisToolsImg}
+      />
 
-        <ContentSection 
-          title="주문 시스템 및" 
-          highlight="주문 타입"
-          description="모든 유형의 주문에 대한 지원을 포함하여 해외선물 거래를 유연하게 제어할 수 있습니다. 다양한 주문 유형과 위험 관리 도구를 활용하여 체계적인 포지션 관리가 가능합니다."
-          image={orderSystemImg}
-          listItems={[
-            "시장가 주문 및 지정가 주문 지원",
-            "스톱 로스 및 테이크 프로핏 설정",
-            "트레이링 스톱 기능",
-            "원클릭 매매 지원"
-          ]}
-        />
-        
-        <ContentSection 
-          title="경험이 풍부한" 
-          highlight="거래자로부터 거래 신호 수신"
-          description="JW에셋에서 경험이 풍부한 해외선물 트레이더의 거래 전략을 참고하고, 실시간 거래 신호를 활용하여 보다 효과적인 투자 판단을 내릴 수 있습니다."
-          image={signalsImg}
-          reversed={true}
-        />
+      <ContentSection
+        title="조건 기반의"
+        highlight="자동화 매매 시스템"
+        description="사전에 설정한 조건이 충족되면 자동으로 주문을 실행합니다. 시장을 직접 지켜보지 않아도 전략이 일관되게 작동하며, 매매 이력 분석을 통해 전략을 지속적으로 개선할 수 있습니다."
+        image={automatedTradingImg}
+        reversed={true}
+      />
 
-        <Platforms />
-        <Markets />
-        <Footer />
-      </div>
+      <Steps />
+
+      <ContentSection
+        title="체계적인 주문 관리와"
+        highlight="리스크 제어"
+        description="시장가·지정가·스톱 주문 등 다양한 주문 유형을 지원하며, 스톱로스와 테이크프로핏을 사전에 설정해 리스크를 체계적으로 관리할 수 있습니다."
+        image={orderSystemImg}
+        listItems={[
+          "시장가 · 지정가 주문 완벽 지원",
+          "스톱로스 · 테이크프로핏 자동 실행",
+          "트레일링 스톱으로 수익 극대화",
+          "원클릭 매매로 신속한 포지션 진입",
+        ]}
+      />
+
+      <ContentSection
+        title="시장 전문가의"
+        highlight="거래 신호 활용"
+        description="JW에셋에서는 경험이 풍부한 해외선물 트레이더의 실시간 거래 신호를 참고할 수 있습니다. 전략의 근거를 학습하고, 자신만의 투자 판단 기준을 정립하세요."
+        image={signalsImg}
+        reversed={true}
+      />
+
+      <Platforms />
+      <Markets />
+      <Footer />
     </div>
   );
 }
