@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 pb-8 pt-16 text-white md:pt-20">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 border-b border-slate-800 pb-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 border-b border-slate-800 pb-12 sm:grid-cols-2">
 
           {/* 회사 소개 */}
           <div>
@@ -35,25 +35,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 거래 종목 */}
-          <div>
-            <h3 className="mb-5 text-sm font-bold text-slate-200">거래 종목</h3>
-            <div className="space-y-3 text-sm text-slate-400">
-              <p>지수 선물 (나스닥 · S&P 500)</p>
-              <p>금속 선물 (금 · 은 · 구리)</p>
-              <p>에너지 선물 (WTI 원유)</p>
-              <p>통화 선물 (엔 · 파운드 · 유로)</p>
-            </div>
-          </div>
-
-          {/* 고객지원 */}
-          <div>
-            <h3 className="mb-5 text-sm font-bold text-slate-200">고객지원</h3>
-            <p className="text-sm leading-7 text-slate-400">
-              거래 및 플랫폼 이용과 관련한 문의는 고객센터를 통해 안내받으실 수 있습니다.
-            </p>
-            <p className="mt-4 text-sm font-semibold text-slate-300">운영시간 · 24시간 5일 (월~금)</p>
-          </div>
         </div>
 
         {/* 하단 바 */}
